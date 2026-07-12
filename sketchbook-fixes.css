@@ -1,0 +1,6 @@
+@media (min-width: 901px) {
+  .hero {
+    min-height: 690px !important;
+    padding-bottom: 125px !important;
+  }
+}
