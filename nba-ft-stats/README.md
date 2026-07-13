@@ -18,9 +18,17 @@ python3 ft_stats.py                                        # Steph Curry, 2025-2
 python3 ft_stats.py --player "Stephen Curry" --season 2025-26
 python3 ft_stats.py --season-type Playoffs
 python3 ft_stats.py --json curry.json                      # also dump raw numbers
+python3 ft_stats.py --league --season 2025-26              # every team, whole league
 ```
 
-First run downloads ~1 play-by-play file per game (a minute or two);
+**League mode** (`--league`) fetches every game of the season once
+(~1,230 games, roughly 15–25 minutes on first run), attributes each free
+throw to its player and team from the play-by-play event itself (so
+mid-season trades are handled correctly), prints a team comparison table,
+and writes a full markdown report — league totals, all 30 team breakdowns,
+and each team's top FT shooters — to `reports/`.
+
+First run downloads ~1 play-by-play file per game;
 responses are cached in `.cache/` so re-runs are instant.
 
 ## Network requirements

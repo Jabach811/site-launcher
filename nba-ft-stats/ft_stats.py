@@ -106,6 +106,21 @@ def find_player(name, season):
     raise SystemExit(f"No player named '{name}' found for {season}.")
 
 
+def league_game_ids(season, season_type):
+    """All game IDs for a season (deduped from the two team rows per game)."""
+    url = (
+        "https://stats.nba.com/stats/leaguegamelog?Counter=0&Direction=ASC"
+        f"&LeagueID=00&PlayerOrTeam=T&Season={season}"
+        f"&SeasonType={urllib.parse.quote(season_type)}&Sorter=DATE"
+    )
+    key = f"leaguegamelog_{season}_{season_type.replace(' ', '')}.json"
+    rows = resultset_rows(fetch(url, cache_key=key), "LeagueGameLog")
+    seen = {}
+    for r in rows:
+        seen.setdefault(r["GAME_ID"], (r["GAME_ID"], r["GAME_DATE"], r["MATCHUP"]))
+    return sorted(seen.values())
+
+
 def game_ids(player_id, season, season_type):
     url = (
         f"https://stats.nba.com/stats/playergamelog?PlayerID={player_id}"
@@ -160,6 +175,37 @@ def collect_fts(games, player_id):
                 current = {"kind": kind, "total": total, "makes": [], "game": gid}
                 trips.append(current)
             current["makes"].append(made)
+    return trips
+
+
+def collect_fts_league(games):
+    """Fetch play-by-play for each game and return FT trips for ALL players,
+    tagged with player/team from the event itself (trade-proof)."""
+    trips = []
+    for i, (gid, date, matchup) in enumerate(games, 1):
+        print(f"  [{i}/{len(games)}] {date} {matchup}", file=sys.stderr)
+        url = f"https://cdn.nba.com/static/json/liveData/playbyplay/playbyplay_{gid}.json"
+        pbp = fetch(url, cache_key=f"pbp_{gid}.json")
+        current = {}  # personId -> open trip (FTs by different players can interleave)
+        for a in pbp["game"]["actions"]:
+            if a.get("actionType") != "freethrow":
+                continue
+            info = classify(a)
+            if info is None:
+                continue
+            kind, idx, total, made = info
+            pid = a.get("personId")
+            cur = current.get(pid)
+            if idx == 1 or cur is None or cur["kind"] != kind:
+                cur = {
+                    "kind": kind, "total": total, "makes": [], "game": gid,
+                    "personId": pid,
+                    "player": a.get("playerNameI") or a.get("playerName") or str(pid),
+                    "team": a.get("teamTricode") or "UNK",
+                }
+                current[pid] = cur
+                trips.append(cur)
+            cur["makes"].append(made)
     return trips
 
 
@@ -244,14 +290,106 @@ def report(name, season, season_type, s):
     return "\n".join(lines)
 
 
+def pct_only(pair):
+    made, att = pair
+    return f"{made / att:.1%}" if att else "—"
+
+
+TEAM_TABLE_HEADER = (
+    "| Team | FT | FT% | 2-shot trips | 1st FT% | 2nd FT% "
+    "| 2nd after make | 2nd after miss | And-one FT% | Tech FT% |\n"
+    "|---|---|---|---|---|---|---|---|---|---|"
+)
+
+
+def table_row(label, s):
+    return (
+        f"| {label} | {s['total'][0]}/{s['total'][1]} | {pct_only(s['total'])} "
+        f"| {s['trips_2shot']} | {pct_only(s['ft1_2shot'])} | {pct_only(s['ft2_2shot'])} "
+        f"| {pct_only(s['ft2_after_make'])} | {pct_only(s['ft2_after_miss'])} "
+        f"| {pct_only(s['andone'])} | {pct_only(s['tech'])} |"
+    )
+
+
+def league_report_md(season, season_type, trips, top_n=8):
+    lines = [f"# NBA Free Throw Breakdown — {season} {season_type}", ""]
+    league = summarize(trips)
+    lines += ["## League totals", "", "```",
+              report("NBA (all players)", season, season_type, league).strip(),
+              "```", ""]
+
+    by_team = {}
+    for t in trips:
+        by_team.setdefault(t["team"], []).append(t)
+    team_stats = {tm: summarize(ts) for tm, ts in by_team.items()}
+    ranked_teams = sorted(
+        team_stats,
+        key=lambda tm: (team_stats[tm]["total"][0] / team_stats[tm]["total"][1])
+        if team_stats[tm]["total"][1] else 0,
+        reverse=True,
+    )
+
+    lines += ["## Team comparison (sorted by FT%)", "", TEAM_TABLE_HEADER]
+    lines += [table_row(tm, team_stats[tm]) for tm in ranked_teams]
+
+    for tm in sorted(by_team):
+        lines += ["", f"## {tm}", "", "```",
+                  report(tm, season, season_type, team_stats[tm]).strip(), "```",
+                  "", f"Top {top_n} players by FT attempts:", "", TEAM_TABLE_HEADER]
+        by_player = {}
+        for t in by_team[tm]:
+            by_player.setdefault(t["player"], []).append(t)
+        player_stats = {p: summarize(ts) for p, ts in by_player.items()}
+        ranked = sorted(player_stats, key=lambda p: -player_stats[p]["total"][1])
+        lines += [table_row(p, player_stats[p]) for p in ranked[:top_n]]
+
+    return "\n".join(lines) + "\n", team_stats
+
+
+def run_league(args):
+    games = league_game_ids(args.season, args.season_type)
+    if not games:
+        raise SystemExit(f"No {args.season_type} games found for {args.season}.")
+    print(f"Fetching play-by-play for {len(games)} games…", file=sys.stderr)
+    trips = collect_fts_league(games)
+    md, team_stats = league_report_md(args.season, args.season_type, trips)
+    out_dir = Path(__file__).resolve().parent / "reports"
+    out_dir.mkdir(exist_ok=True)
+    slug = f"league_{args.season}_{args.season_type.replace(' ', '').lower()}"
+    out = out_dir / f"{slug}.md"
+    out.write_text(md)
+    print(f"\nFull report written to {out}\n")
+    print("Team comparison (sorted by FT%):\n")
+    print(TEAM_TABLE_HEADER)
+    ranked = sorted(
+        team_stats,
+        key=lambda tm: (team_stats[tm]["total"][0] / team_stats[tm]["total"][1])
+        if team_stats[tm]["total"][1] else 0,
+        reverse=True,
+    )
+    for tm in ranked:
+        print(table_row(tm, team_stats[tm]))
+    if args.json:
+        Path(args.json).write_text(json.dumps(
+            {"season": args.season, "season_type": args.season_type,
+             "games": len(games), "teams": team_stats}, indent=2))
+        print(f"\nRaw numbers written to {args.json}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--league", action="store_true",
+                    help="analyze every game in the season, grouped by team")
     ap.add_argument("--player", default="Stephen Curry")
     ap.add_argument("--season", default="2025-26", help="e.g. 2025-26")
     ap.add_argument("--season-type", default="Regular Season",
                     choices=["Regular Season", "Playoffs"])
     ap.add_argument("--json", metavar="FILE", help="also write raw numbers as JSON")
     args = ap.parse_args()
+
+    if args.league:
+        run_league(args)
+        return
 
     pid, full_name = find_player(args.player, args.season)
     print(f"Player: {full_name} (id {pid})", file=sys.stderr)
