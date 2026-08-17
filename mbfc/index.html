@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Best Friend’s Closet — Tracy, California</title>
+<meta name="description" content="A Tracy boutique where half the rack is designer resale. New arrivals daily, live sales three times a week, and 40% to you when you consign.">
+<meta name="theme-color" content="#F2F2EF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=DM+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/mbfc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="concept-note">Redesign concept · not the live site · placeholder imagery throughout</div>
+
+<header class="site-head">
+  <div class="shell">
+    <div class="head-bar">
+      <a class="wordmark" href="index.html">My Best Friend’s Closet<small>Tracy, California · since 2012</small></a>
+      <nav class="nav-main" id="primary-nav" aria-label="Primary">
+        <a href="shop.html">Shop</a>
+        <a href="brands.html">Brands</a>
+        <a href="consign.html">Consign</a>
+        <a href="visit.html">Visit</a>
+        <a href="account.html">My account</a>
+      </nav>
+      <div class="head-actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      </div>
+    </div>
+    <div class="doors">
+      <a class="door" href="shop.html">Shop the rack <span>half new · half designer resale</span></a>
+      <a class="door" href="consign.html">Consign with us <span>40% to you · book a drop-off</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== hero: the reframe ========================================== -->
+  <section class="band tight hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow brass">53 W 10th Street · Downtown Tracy</p>
+        <h1 class="display">Half the rack<br>is brand new.<br>Half came from<br>a neighbor’s closet.</h1>
+        <p class="lede">Every tag tells you which. That is the whole idea — designer resale and new boutique stock on one floor, priced honestly, labeled plainly, changing every single day.</p>
+        <div class="hero-actions">
+          <a class="btn" href="shop.html">Shop the rack <span class="arw">&rarr;</span></a>
+          <a class="btn ghost" href="consign.html">Bring us your closet <span class="arw">&rarr;</span></a>
+        </div>
+        <div class="hero-legend">
+          <span class="tag tag-new">New</span>
+          <span class="tag tag-consigned">Consigned</span>
+          <small>You will see one of these on every single piece, on the floor and online.</small>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="ph tall" data-slot="Hero — the rack, shot down the length of the store, 2:3 portrait"></div>
+        <div class="ph square" data-slot="Detail — hands on a hang tag, 1:1"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== live sales ================================================== -->
+  <section class="band tight paper" aria-labelledby="live-title">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow"><span class="tag tag-live">Live</span></p>
+          <h2 class="display" id="live-title">We sell live,<br>three times a week.</h2>
+        </div>
+        <p class="lede">The best pieces move on camera before they ever reach a rack. Watch in the app or right here — same inventory, same prices, first come.</p>
+      </div>
+
+      <div class="live-bar">
+        <div class="live-slot">
+          <p class="live-day">Wednesday</p>
+          <p class="live-time">4:00 pm</p>
+          <p class="countdown"></p>
+        </div>
+        <div class="live-slot">
+          <p class="live-day">Thursday</p>
+          <p class="live-time">6:00 pm</p>
+          <p class="countdown"></p>
+        </div>
+        <div class="live-slot">
+          <p class="live-day">Saturday</p>
+          <p class="live-time">9:00 am</p>
+          <p class="countdown"></p>
+        </div>
+        <div class="live-slot next-panel">
+          <p class="live-day">Next show</p>
+          <p class="live-time" data-countdown>—</p>
+          <p class="countdown" data-next-show></p>
+        </div>
+      </div>
+
+      <p class="live-note">Pacific time. Set a reminder in the app, or just turn up — we go live from the shop floor.</p>
+    </div>
+  </section>
+
+  <!-- ===== new on the rack ============================================= -->
+  <section class="band" aria-labelledby="new-title">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">Just in</p>
+          <h2 class="display" id="new-title">New on the rack</h2>
+        </div>
+        <p class="lede">There is no restock here. Every piece is one of one, so the only way to see it is to look often — which is exactly how our regulars shop.</p>
+      </div>
+
+      <div class="rack" id="rack" data-limit="8"></div>
+
+      <p class="rack-more"><a class="btn ghost" href="shop.html">See everything <span class="arw">&rarr;</span></a></p>
+    </div>
+  </section>
+
+  <!-- ===== two doors, explained ======================================== -->
+  <section class="band paper" aria-labelledby="doors-title">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">Two ways in</p>
+          <h2 class="display" id="doors-title">Buy from it,<br>or sell into it.</h2>
+        </div>
+        <p class="lede">Most people here end up doing both. The credit you earn consigning spends at full value on anything in the store.</p>
+      </div>
+
+      <div class="panels">
+        <div class="panel">
+          <span class="tag tag-consigned">For consignors</span>
+          <h3>You keep 40%</h3>
+          <p>Of the sale price on clothing and accessories, paid by check on the 15th of the month — or take it as store credit and spend it the same day.</p>
+        </div>
+        <div class="panel">
+          <span class="tag tag-plain">Drop-off</span>
+          <h3>By appointment, 25 pieces</h3>
+          <p>Book a slot, bring up to 25 hung items plus a bag of shoes and accessories. We go through them with you, right there.</p>
+        </div>
+        <div class="panel">
+          <span class="tag tag-plain">Or we come to you</span>
+          <h3>Closet clearing at home</h3>
+          <p>Too much to carry? We will come to your house, go through the closet with you, and take away what will sell. No app can do that.</p>
+        </div>
+        <div class="panel">
+          <span class="tag tag-plain">Every 30 days</span>
+          <h3>Prices step down</h3>
+          <p>Unsold pieces are reduced on a published schedule so nothing sits and stales. You always know what your item is worth this week.</p>
+        </div>
+      </div>
+
+      <p class="rack-more"><a class="btn" href="consign.html">See the full terms and book a drop-off <span class="arw">&rarr;</span></a></p>
+    </div>
+  </section>
+
+  <!-- ===== the moat ==================================================== -->
+  <section class="band ink" aria-labelledby="why-title">
+    <div class="shell band-head" style="margin-bottom:0">
+      <div>
+        <p class="eyebrow">Why here</p>
+        <h2 class="display" id="why-title">An app cannot<br>come to your house.</h2>
+      </div>
+      <div class="prose">
+        <p>You could photograph forty things, write forty descriptions, answer forty questions and ship forty boxes. Or you could hand us the bag.</p>
+        <p>We price it, photograph it, put it on the floor, put it in a live show, and hand you a check. Fourteen years of doing it for Tracy, and the same person still looks at every piece.</p>
+        <p><a href="consign.html">Book a drop-off</a> · <a href="visit.html">Ask about home pickup</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== brands teaser =============================================== -->
+  <section class="band" aria-labelledby="brands-title">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">What we take</p>
+          <h2 class="display" id="brands-title">From Lululemon<br>to Louis Vuitton.</h2>
+        </div>
+        <p class="lede">If you have to ask whether we take it, the list will tell you in about four seconds. And it tells you what we don’t take, which saves everyone a trip.</p>
+      </div>
+
+      <ul class="brand-strip">
+        <li>Chanel</li><li>Louis Vuitton</li><li>Gucci</li><li>Prada</li><li>Tory Burch</li>
+        <li>Free People</li><li>Lululemon</li><li>Alo Yoga</li><li>Anthropologie</li>
+        <li>Madewell</li><li>Banana Republic</li><li>Zara</li>
+      </ul>
+
+      <p class="rack-more"><a class="btn ghost" href="brands.html">The full accept list <span class="arw">&rarr;</span></a></p>
+    </div>
+  </section>
+
+  <!-- ===== visit ======================================================= -->
+  <section class="band paper" aria-labelledby="visit-title">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Come in</p>
+        <h2 class="display" id="visit-title">53 W 10th Street,<br>Tracy.</h2>
+        <p class="lede">Downtown, on the corner. Free parking on 10th. We are a real shop with real people in it, which is still the fastest way to find something good.</p>
+        <div class="hero-actions">
+          <a class="btn" href="visit.html">Hours &amp; directions <span class="arw">&rarr;</span></a>
+          <a class="btn ghost" href="tel:+12098336232">(209) 833-6232</a>
+        </div>
+      </div>
+      <div class="ph wide" data-slot="Storefront on 10th Street, 16:9 — daylight, sign visible"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="index.html">My Best Friend’s Closet<small>Tracy, California · since 2012</small></a>
+        <p class="foot-addr">
+          53 W 10th Street<br>Tracy, CA 95376<br>
+          <a href="tel:+12098336232">(209) 833-6232</a>
+        </p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul class="foot-links">
+          <li><a href="shop.html">Everything</a></li>
+          <li><a href="shop.html">New arrivals</a></li>
+          <li><a href="brands.html">By brand</a></li>
+          <li><a href="conditions.html">Condition chart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Consign</h4>
+        <ul class="foot-links">
+          <li><a href="consign.html">How it works</a></li>
+          <li><a href="consign.html#terms">Terms &amp; payout</a></li>
+          <li><a href="brands.html">What we accept</a></li>
+          <li><a href="account.html">Consignor login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul class="foot-links">
+          <li><a href="visit.html">Hours &amp; map</a></li>
+          <li><a href="visit.html#live">Live sale schedule</a></li>
+          <li><a href="visit.html#services">Personal shopping</a></li>
+          <li><a href="https://www.instagram.com/mbfctracy/" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 My Best Friend’s Closet</span>
+      <span>Design concept · placeholder imagery</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/mbfc.js"></script>
+<style>
+  /* page-local layout that does not belong in the shared system */
+  .hero { padding-top: clamp(40px, 5vw, 72px); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
+    gap: 48px 7vw; align-items: center; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 0; }
+  .hero-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+    margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--rule); }
+  .hero-legend small { color: var(--muted); font-size: .8rem; flex: 1 1 240px; }
+  .hero-media { display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; align-items: start; }
+  .live-note { margin: 16px 0 0; font-size: .84rem; color: var(--muted); }
+  .next-panel { background: var(--ink); color: var(--bone); }
+  .next-panel .live-day { color: #8D97A8; }
+  .next-panel .countdown { color: #C9A55F; }
+  .rack-more { margin: 30px 0 0; }
+  .brand-strip { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1px;
+    background: var(--rule); border: 1px solid var(--rule); }
+  .brand-strip li { background: var(--card); flex: 1 1 auto; padding: 20px 26px;
+    font-family: var(--serif); font-size: 1.15rem; text-align: center; white-space: nowrap; }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-media { grid-template-columns: 1.4fr 1fr; }
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Consign with us — My Best Friend’s Closet, Tracy</title>
+<meta name="description" content="You keep 40%. Book a drop-off in Tracy, or have us clear your closet at home. Published terms, a published markdown schedule, and a calculator so you can see the number before you decide.">
+<meta name="theme-color" content="#F2F2EF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=DM+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/mbfc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="concept-note">Redesign concept · not the live site · placeholder imagery throughout</div>
+
+<header class="site-head">
+  <div class="shell">
+    <div class="head-bar">
+      <a class="wordmark" href="index.html">My Best Friend’s Closet<small>Tracy, California · since 2012</small></a>
+      <nav class="nav-main" id="primary-nav" aria-label="Primary">
+        <a href="shop.html">Shop</a>
+        <a href="brands.html">Brands</a>
+        <a href="consign.html" aria-current="page">Consign</a>
+        <a href="visit.html">Visit</a>
+        <a href="account.html">My account</a>
+      </nav>
+      <div class="head-actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      </div>
+    </div>
+    <div class="doors">
+      <a class="door" href="shop.html">Shop the rack <span>half new · half designer resale</span></a>
+      <a class="door" href="consign.html">Consign with us <span>40% to you · book a drop-off</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="band tight">
+    <div class="shell consign-hero">
+      <div>
+        <p class="eyebrow brass">Consign with us</p>
+        <h1 class="display">You keep 40%.<br>We do everything else.</h1>
+        <p class="lede">Bring us up to 25 pieces, or let us come to your house and go through the closet with you. We price it, photograph it, put it on the floor and into a live show, and pay you by check on the 15th.</p>
+        <div class="hero-actions">
+          <a class="btn brass" href="#book">Book a drop-off <span class="arw">&rarr;</span></a>
+          <a class="btn ghost" href="brands.html">Check what we accept <span class="arw">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="ph portrait" data-slot="Intake — a consignor and staff going through a rail together, 3:4"></div>
+    </div>
+  </section>
+
+  <!-- ===== how it works ================================================ -->
+  <section class="band paper" aria-labelledby="how-title">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">Four steps</p>
+          <h2 class="display" id="how-title">How it works</h2>
+        </div>
+        <p class="lede">No shipping labels, no photography, no answering questions from strangers at eleven at night. You hand us the bag.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <h3>Check the list, then book</h3>
+          <p>Have a look at <a href="brands.html">what we accept</a> — it takes about four seconds and saves you a trip. Then book a slot. New consignors always need an appointment; after that you can drop and run.</p>
+        </li>
+        <li>
+          <h3>Bring up to 25 hung pieces</h3>
+          <p>Plus a bag of shoes and accessories. Everything washed or dry cleaned, on hangers, no smoke or pet hair. We go through it with you, right there, and tell you what we can take.</p>
+        </li>
+        <li>
+          <h3>We price, shoot and sell it</h3>
+          <p>Onto the floor, onto the website, and into the live shows we run three times a week. You can watch every piece move from <a href="account.html">your account</a>.</p>
+        </li>
+        <li>
+          <h3>You get paid</h3>
+          <p>40% of the sale price. Request a check any time from your account — they go out on the 15th of the month, on balances over $20 — or spend it as store credit the same day you earn it.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== the calculator — the whole point ============================ -->
+  <section class="band" aria-labelledby="calc-title" id="terms">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">No surprises</p>
+          <h2 class="display" id="calc-title">See your number<br>before you decide.</h2>
+        </div>
+        <p class="lede">Most shops will not tell you what a markdown does to your payout. Move the slider and watch it happen — this is the real math, not a best case.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-controls">
+          <label for="calc-price">If we ticket your piece at</label>
+          <input type="range" id="calc-price" min="20" max="800" step="5" value="120">
+          <label for="calc-week">and it sells in</label>
+          <select id="calc-week">
+            <option value="1">Weeks 1–4 &middot; full price</option>
+            <option value="5">Weeks 5–8 &middot; reduced 20%</option>
+            <option value="9">Weeks 9–12 &middot; reduced 40%</option>
+          </select>
+        </div>
+
+        <div class="math">
+          <div class="math-row"><span>Ticket price</span><span id="out-ticket">$120</span></div>
+          <div class="math-row"><span>Sells for</span><span id="out-week">$120</span></div>
+          <div class="math-row sub"><span>Our 60% covers the floor, the photography, the live shows and the staff</span><span></span></div>
+          <div class="math-row total"><span>Your 40%</span><span id="out-yours">$48</span></div>
+        </div>
+      </div>
+
+      <div class="callout sage" style="margin-top:30px">
+        <p><strong>The honest version:</strong> a piece that sells in week two pays you more than the same piece in week ten. That is true at every consignment shop in the country — most of them just do not show you. Ours is a fixed schedule you can plan around, not a range we decide later.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== full terms ================================================== -->
+  <section class="band paper" aria-labelledby="tt">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">Everything, in writing</p>
+          <h2 class="display" id="tt">The terms</h2>
+        </div>
+        <p class="lede">All of it on one page, where you can read it before you pack the car — not on a clipboard after you have already driven over.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption class="visually-hidden">Consignment terms</caption>
+          <thead><tr><th scope="col">Term</th><th scope="col">What it is</th><th scope="col">Detail</th></tr></thead>
+          <tbody>
+            <tr><td class="k">Your split</td><td class="n">40%</td>
+              <td>Of the sale price on clothing and accessories, less sales tax.</td></tr>
+            <tr><td class="k">Store credit</td><td class="n">40%</td>
+              <td>Same rate, available the moment a piece sells. Spends on anything in the shop, new or consigned.</td></tr>
+            <tr><td class="k">Markdown</td><td class="n">0 · −20% · −40%</td>
+              <td>Full price weeks 1–4, reduced 20% weeks 5–8, reduced 40% weeks 9–12. Jewellery, luxury and eveningwear are held at price unless we agree otherwise in writing.</td></tr>
+            <tr><td class="k">Term length</td><td class="n">90 days</td>
+              <td>After twelve weeks a piece comes off the floor, unless it is still in season and still selling.</td></tr>
+            <tr><td class="k">Per appointment</td><td class="n">25 pieces</td>
+              <td>Hung items, plus a bag of shoes and accessories. Come as often as you like.</td></tr>
+            <tr><td class="k">Payout</td><td class="n">15th monthly</td>
+              <td>Request from your account at any time. Cheques issue on the 15th on balances over $20; credit is available immediately at any amount.</td></tr>
+            <tr><td class="k">Handling</td><td class="n">$0.99</td>
+              <td>Added to items over $10 and paid by the buyer, not by you.</td></tr>
+            <tr><td class="k">Retrieval</td><td class="n">$25</td>
+              <td>If you want a piece back before its term is up, we charge a location fee. Items stay with us a minimum of 90 days from pricing.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="terms-note">Full agreement signed at your first appointment. Terms current as of the date on this page and subject to change — the copy on this page is always the current one.</p>
+    </div>
+  </section>
+
+  <!-- ===== booking ===================================================== -->
+  <section class="band" id="book" aria-labelledby="book-title">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">Two ways to hand it over</p>
+          <h2 class="display" id="book-title">Book a drop-off</h2>
+        </div>
+        <p class="lede">Or, if it is more than you want to carry, we will come to you. There is no version of this where you photograph forty things yourself.</p>
+      </div>
+
+      <div class="book-grid">
+        <form class="book-form" onsubmit="event.preventDefault(); this.querySelector('.book-ack').hidden = false;">
+          <div class="field">
+            <label for="bf-name">Your name</label>
+            <input id="bf-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="bf-phone">Phone</label>
+            <input id="bf-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="bf-kind">What you would like</label>
+            <select id="bf-kind" name="kind">
+              <option>Drop-off appointment at the shop</option>
+              <option>Closet clearing at my house</option>
+              <option>I am a returning consignor — drop and run</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bf-what">Roughly what you have</label>
+            <textarea id="bf-what" name="what" rows="3" placeholder="About 20 pieces — mostly Free People and Lululemon, a couple of Coach bags"></textarea>
+          </div>
+          <button class="btn brass" type="submit">Request an appointment <span class="arw">&rarr;</span></button>
+          <p class="book-ack" hidden>Thank you — this is a design prototype, so nothing was actually sent. On the live site this would reach the shop and you would hear back the same day.</p>
+        </form>
+
+        <div class="book-side">
+          <div class="panel">
+            <span class="tag tag-plain">At home</span>
+            <h3>Closet clearing</h3>
+            <p>We come to your house, go through the closet with you, and take away what will sell. Best if you have more than a couple of bags, are moving, or are clearing a family member’s things.</p>
+            <p><a href="tel:+12098336232">(209) 833-6232</a></p>
+          </div>
+          <div class="panel">
+            <span class="tag tag-plain">Already a consignor?</span>
+            <h3>Check your account</h3>
+            <p>See what has sold, what is still on the floor, what it is worth this week, and request your cheque — without ringing the shop.</p>
+            <p><a class="btn ghost sm" href="account.html">Open my account <span class="arw">&rarr;</span></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="index.html">My Best Friend’s Closet<small>Tracy, California · since 2012</small></a>
+        <p class="foot-addr">53 W 10th Street<br>Tracy, CA 95376<br><a href="tel:+12098336232">(209) 833-6232</a></p>
+      </div>
+      <div><h4>Shop</h4><ul class="foot-links">
+        <li><a href="shop.html">Everything</a></li><li><a href="brands.html">By brand</a></li>
+        <li><a href="conditions.html">Condition chart</a></li></ul></div>
+      <div><h4>Consign</h4><ul class="foot-links">
+        <li><a href="consign.html">How it works</a></li><li><a href="consign.html#terms">Terms &amp; payout</a></li>
+        <li><a href="account.html">Consignor login</a></li></ul></div>
+      <div><h4>Visit</h4><ul class="foot-links">
+        <li><a href="visit.html">Hours &amp; map</a></li><li><a href="visit.html#live">Live sale schedule</a></li>
+        <li><a href="https://www.instagram.com/mbfctracy/" rel="noopener">Instagram</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 My Best Friend’s Closet</span>
+      <span>Design concept · placeholder imagery</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/mbfc.js"></script>
+<style>
+  .visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .consign-hero { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);
+    gap: 44px 7vw; align-items: center; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 0; }
+  .calc-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    gap: 36px 6vw; align-items: start; }
+  .calc-controls label { display: block; font-family: var(--mono); font-size: .68rem;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  .calc-controls label + select, .calc-controls input + label { margin-top: 26px; }
+  .calc-controls input[type=range] { width: 100%; accent-color: var(--brass); }
+  .calc-controls select { width: 100%; padding: 13px 14px; border: 1px solid var(--rule-2);
+    background: var(--card); font: 500 .9rem var(--sans); color: var(--ink); }
+  .terms-note { margin: 18px 0 0; font-size: .82rem; color: var(--muted); max-width: 70ch; }
+  .book-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.9fr);
+    gap: 36px 6vw; align-items: start; }
+  .book-form { background: var(--card); border: 1px solid var(--rule); padding: 28px; }
+  .field { margin-bottom: 20px; }
+  .field label { display: block; font-family: var(--mono); font-size: .64rem;
+    letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 13px 14px; border: 1px solid var(--rule-2);
+    background: var(--bone); font: 400 .95rem var(--sans); color: var(--ink); }
+  .field textarea { resize: vertical; }
+  .book-ack { margin: 18px 0 0; padding: 14px 16px; background: var(--sage-soft);
+    color: var(--sage); font-size: .88rem; line-height: 1.5; }
+  .book-side { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .book-side .panel a { color: var(--brass); }
+  .book-side .panel .btn { color: var(--ink); }
+  @media (max-width: 900px) {
+    .consign-hero, .calc-grid, .book-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</body>
+</html>

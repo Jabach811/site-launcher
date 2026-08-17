@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piece — My Best Friend’s Closet, Tracy</title>
+<meta name="description" content="One of one. New or consigned, always labeled, always photographed as it actually is.">
+<meta name="theme-color" content="#F2F2EF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=DM+Mono:wght@400;500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/mbfc.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="concept-note">Redesign concept · not the live site · placeholder imagery throughout</div>
+
+<header class="site-head">
+  <div class="shell">
+    <div class="head-bar">
+      <a class="wordmark" href="index.html">My Best Friend’s Closet<small>Tracy, California · since 2012</small></a>
+      <nav class="nav-main" id="primary-nav" aria-label="Primary">
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="brands.html">Brands</a>
+        <a href="consign.html">Consign</a>
+        <a href="visit.html">Visit</a>
+        <a href="account.html">My account</a>
+      </nav>
+      <div class="head-actions">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      </div>
+    </div>
+    <div class="doors">
+      <a class="door" href="shop.html">Shop the rack <span>half new · half designer resale</span></a>
+      <a class="door" href="consign.html">Consign with us <span>40% to you · book a drop-off</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="band tight">
+    <div class="shell">
+      <p class="crumb"><a href="shop.html">&larr; Back to the rack</a></p>
+      <div id="product-detail" class="pd-grid"></div>
+    </div>
+  </section>
+
+  <section class="band tight paper">
+    <div class="shell">
+      <div class="band-head">
+        <div>
+          <p class="eyebrow">Before you buy</p>
+          <h2 class="display">What our grades<br>actually mean.</h2>
+        </div>
+        <p class="lede">We would rather tell you about a scuff up front than argue about it later. Every consigned piece carries one of four grades, and the photos show the flaws.</p>
+      </div>
+      <div class="panels">
+        <div class="panel"><span class="tag tag-consigned">Excellent</span><h3>Like new</h3><p>Worn once or twice, or never. No visible wear at all.</p></div>
+        <div class="panel"><span class="tag tag-consigned">Very Good</span><h3>Barely worn</h3><p>Minor signs of wear — light marking or the faintest fade. Nothing you would notice across a room.</p></div>
+        <div class="panel"><span class="tag tag-consigned">Good</span><h3>Loved</h3><p>Moderate wear, creasing or marking, photographed close up so you can judge it yourself.</p></div>
+        <div class="panel"><span class="tag tag-consigned">Fair</span><h3>Well loved</h3><p>Real wear, priced accordingly. Rare on our floor and always described in detail.</p></div>
+      </div>
+      <p class="rack-more"><a class="btn ghost" href="conditions.html">The full condition chart <span class="arw">&rarr;</span></a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="index.html">My Best Friend’s Closet<small>Tracy, California · since 2012</small></a>
+        <p class="foot-addr">53 W 10th Street<br>Tracy, CA 95376<br><a href="tel:+12098336232">(209) 833-6232</a></p>
+      </div>
+      <div><h4>Shop</h4><ul class="foot-links">
+        <li><a href="shop.html">Everything</a></li><li><a href="brands.html">By brand</a></li>
+        <li><a href="conditions.html">Condition chart</a></li></ul></div>
+      <div><h4>Consign</h4><ul class="foot-links">
+        <li><a href="consign.html">How it works</a></li><li><a href="consign.html#terms">Terms &amp; payout</a></li>
+        <li><a href="account.html">Consignor login</a></li></ul></div>
+      <div><h4>Visit</h4><ul class="foot-links">
+        <li><a href="visit.html">Hours &amp; map</a></li><li><a href="visit.html#live">Live sale schedule</a></li>
+        <li><a href="https://www.instagram.com/mbfctracy/" rel="noopener">Instagram</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 My Best Friend’s Closet</span>
+      <span>Design concept · placeholder imagery</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/mbfc.js"></script>
+<style>
+  .crumb { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em;
+    text-transform: uppercase; margin: 0 0 28px; }
+  .crumb a { color: var(--muted); text-decoration: none; }
+  .crumb a:hover { color: var(--ink); }
+  .pd-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.85fr);
+    gap: 44px 6vw; align-items: start; }
+  .pd-thumbs { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 10px; }
+  .pd-price { font-family: var(--mono); font-size: 1.5rem; margin: 18px 0 26px;
+    font-variant-numeric: tabular-nums; }
+  .pd-price s { color: var(--muted); font-size: 1rem; margin-right: 8px; }
+  .pd-specs { display: grid; gap: 1px; background: var(--rule);
+    border: 1px solid var(--rule); margin: 0 0 26px; }
+  .pd-specs > div { background: var(--card); display: flex; justify-content: space-between;
+    gap: 20px; padding: 13px 16px; }
+  .pd-specs dt { font-family: var(--mono); font-size: .64rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted); }
+  .pd-specs dd { margin: 0; font-size: .92rem; font-weight: 500; text-align: right; }
+  .pd-note { margin-top: 26px; padding: 18px 20px; background: var(--card);
+    border-left: 3px solid var(--sage); }
+  .pd-note p { margin: 0; font-size: .92rem; line-height: 1.6; color: var(--ink-2); }
+  .pd-note a { color: var(--brass); }
+  .pd-sold { font-family: var(--mono); font-size: .8rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--live); margin: 0 0 18px; }
+  .pd-ship { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 22px;
+    padding-top: 18px; border-top: 1px solid var(--rule);
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted); }
+  .rack-more { margin: 30px 0 0; }
+  @media (max-width: 900px) { .pd-grid { grid-template-columns: 1fr; } }
+</style>
+</body>
+</html>
