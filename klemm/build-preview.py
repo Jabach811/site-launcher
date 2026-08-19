@@ -62,25 +62,24 @@ for rel in pages:
     )
 
 shell_css = """
-/* --- preview shell: hides all but the routed page --- */
+/* --- preview shell --- */
 .pv-page { display: none; }
 .pv-page.pv-on { display: block; }
 .pv-badge {
-  position: fixed; right: 16px; bottom: 16px; z-index: 999;
-  background: var(--pine-deep); color: var(--cream);
-  font-family: var(--font-body); font-size: 0.74rem; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 9px 15px; border-radius: 999px;
-  box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.18);
-  display: flex; align-items: center; gap: 9px;
+  position: fixed; right: 18px; bottom: 18px; z-index: 9998;
+  background: var(--field); color: var(--dust);
+  font-family: var(--sans); font-size: 0.64rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 11px 16px; border: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 12px;
 }
 .pv-badge b { color: var(--gold); font-weight: 700; }
 .pv-badge button {
-  background: none; border: none; color: rgba(255,255,255,0.55);
-  cursor: pointer; font-size: 1rem; line-height: 1; padding: 0;
+  background: none; border: none; color: var(--dust-dim);
+  cursor: pointer; font-size: 0.9rem; line-height: 1; padding: 0;
 }
-.pv-badge button:hover, .pv-badge button:focus-visible { color: var(--gold); }
-@media (max-width: 720px) { .pv-badge { right: 10px; bottom: 10px; font-size: 0.68rem; } }
+.pv-badge button:hover { color: var(--gold); }
+@media (max-width: 720px) { .pv-badge { right: 10px; bottom: 10px; font-size: 0.58rem; padding: 9px 12px; } }
 """
 
 router = """
@@ -92,7 +91,7 @@ router = """
     var target = document.getElementById(id);
     if (!target || !target.classList.contains('pv-page')) target = pages[0];
     pages.forEach(function (p) { p.classList.toggle('pv-on', p === target); });
-    document.querySelectorAll('.site-nav').forEach(function (n) { n.classList.remove('open'); });
+    document.querySelectorAll('.nav').forEach(function (n) { n.classList.remove('open'); });
     window.scrollTo(0, 0);
     var label = document.querySelector('.pv-badge .pv-name');
     if (label) label.textContent = target.getAttribute('data-src');
@@ -102,9 +101,9 @@ router = """
   show();
 
   // Per-page mobile nav toggles (each bundled page has its own header).
-  document.querySelectorAll('.nav-toggle').forEach(function (btn) {
+  document.querySelectorAll('.burger').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var nav = btn.closest('.nav-row').querySelector('.site-nav');
+      var nav = btn.closest('.wrap').querySelector('.nav');
       if (nav) nav.classList.toggle('open');
     });
   });
@@ -113,7 +112,7 @@ router = """
   document.querySelectorAll('form[data-demo]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var ok = form.querySelector('.form-success');
+      var ok = form.querySelector('.ok');
       if (ok) { ok.style.display = 'block'; ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
       form.reset();
     });
@@ -136,8 +135,8 @@ doc = (
     '<title>%s</title>\n'
     '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-    '<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700'
-    '&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
+    '<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1'
+    '&display=swap" rel="stylesheet">\n'
     '<style>\n%s\n%s</style>\n\n%s\n\n%s\n<script>%s</script>\n'
 ) % (TITLE, css, shell_css, '\n\n'.join(sections), badge, router)
 
