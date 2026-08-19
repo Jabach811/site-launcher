@@ -1,0 +1,3228 @@
+<title>Klemm Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   KLEMM REAL ESTATE — design system
+   Palette: valley pine + warm sand on cream. Type: Fraunces display / Inter body.
+   ========================================================================== */
+
+:root {
+  --pine: #1e3a2f;
+  --pine-deep: #12261e;
+  --pine-soft: #2d5343;
+  --gold: #c19a5b;
+  --gold-deep: #a37e3f;
+  --cream: #faf7f1;
+  --paper: #ffffff;
+  --sage: #e9efe8;
+  --sage-line: #d5ded3;
+  --ink: #22271f;
+  --ink-soft: #5a6156;
+  --star: #e0a53c;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(18, 38, 30, 0.10);
+  --shadow-lg: 0 24px 60px rgba(18, 38, 30, 0.16);
+  --wrap: 1160px;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.65;
+  font-size: 16.5px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--pine); }
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--pine-deep);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.3rem, 5.2vw, 4rem); }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.25rem; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+.kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 14px;
+}
+
+.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 62ch; }
+
+section { padding: 84px 0; }
+section.tight { padding: 56px 0; }
+
+.section-head { max-width: 720px; margin-bottom: 44px; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head h2 { margin-bottom: 12px; }
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn-pine { background: var(--pine); color: #fff; }
+.btn-pine:hover { background: var(--pine-soft); }
+
+.btn-gold { background: var(--gold); color: var(--pine-deep); }
+.btn-gold:hover { background: var(--gold-deep); color: #fff; }
+
+.btn-ghost { border-color: var(--pine); color: var(--pine); background: transparent; }
+.btn-ghost:hover { background: var(--pine); color: #fff; }
+
+.btn-ghost-light { border-color: rgba(255,255,255,0.7); color: #fff; background: transparent; }
+.btn-ghost-light:hover { background: #fff; color: var(--pine-deep); }
+
+/* --------------------------------------------------------------------------
+   Header / nav
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(250, 247, 241, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sage-line);
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 76px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+.brand-mark {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--pine);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.brand-text { line-height: 1.15; }
+.brand-text strong {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  letter-spacing: 0.06em;
+  color: var(--pine-deep);
+  display: block;
+}
+.brand-text em {
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.site-nav { display: flex; align-items: center; gap: 26px; }
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.94rem;
+}
+.site-nav a:hover { color: var(--gold-deep); }
+.site-nav a.active { color: var(--gold-deep); font-weight: 700; }
+.site-nav .btn { padding: 10px 20px; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--sage-line);
+  border-radius: 8px;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 8px 12px;
+  color: var(--pine-deep);
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  color: #fff;
+  padding: 110px 0 150px;
+  background: linear-gradient(180deg, #24443a 0%, #1e3a2f 55%, #16302632 100%),
+              linear-gradient(180deg, #2c4f42, #12261e);
+  overflow: hidden;
+}
+
+.hero h1 { color: #fff; max-width: 15ch; }
+.hero .lede { color: rgba(255, 255, 255, 0.85); margin: 20px 0 32px; }
+
+.hero-hills {
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.hero-inner { position: relative; z-index: 2; }
+
+.hero-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+.hero-badges span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.92);
+}
+
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Quick search bar */
+.quick-search {
+  margin-top: 42px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  max-width: 640px;
+}
+.quick-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: transparent;
+  min-width: 0;
+}
+.quick-search .btn { white-space: nowrap; }
+
+/* Page hero (inner pages) */
+.page-hero {
+  background: linear-gradient(180deg, #24443a, var(--pine-deep));
+  color: #fff;
+  padding: 84px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero h1 { color: #fff; }
+.page-hero .lede { color: rgba(255,255,255,0.85); margin-top: 16px; }
+.page-hero .kicker { color: var(--gold); }
+
+/* --------------------------------------------------------------------------
+   Stat strip
+   -------------------------------------------------------------------------- */
+
+.stat-strip { background: var(--pine-deep); color: #fff; padding: 34px 0; }
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.stat-grid b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  color: var(--gold);
+  line-height: 1.1;
+}
+.stat-grid span {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+
+/* --------------------------------------------------------------------------
+   Cards & grids
+   -------------------------------------------------------------------------- */
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+
+.card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.card-body { padding: 22px 24px 26px; }
+.card-body h3 { margin-bottom: 8px; }
+.card-body p { color: var(--ink-soft); font-size: 0.95rem; }
+
+.card-meta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--pine-deep);
+  font-weight: 700;
+}
+
+.listing-facts {
+  display: flex;
+  gap: 14px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   Placeholder slots (assets Jack fills in later)
+   -------------------------------------------------------------------------- */
+
+.ph {
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg, #eef2ec, #eef2ec 14px, #e5ebe2 14px, #e5ebe2 28px);
+  border: 2px dashed #b9c6b4;
+  display: grid;
+  place-items: center;
+  color: #6d7a68;
+  text-align: center;
+  overflow: hidden;
+}
+.ph::before { content: "📷"; font-size: 1.5rem; margin-bottom: 4px; }
+.ph::after {
+  content: attr(data-label);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  max-width: 85%;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+.ph { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 18px; }
+
+.ph-16x9 { aspect-ratio: 16 / 9; }
+.ph-4x3 { aspect-ratio: 4 / 3; }
+.ph-3x4 { aspect-ratio: 3 / 4; }
+.ph-square { aspect-ratio: 1 / 1; }
+.ph-wide { aspect-ratio: 21 / 9; }
+.ph-round { border-radius: 50%; aspect-ratio: 1 / 1; }
+
+.ph-dark {
+  background: repeating-linear-gradient(45deg, #24443a, #24443a 14px, #1d382f 14px, #1d382f 28px);
+  border-color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.8);
+}
+
+/* Integration slot (IDX / embeds) */
+.embed-slot {
+  border: 2px dashed #b9c6b4;
+  border-radius: var(--radius);
+  background: var(--sage);
+  padding: 60px 28px;
+  text-align: center;
+  color: #4d5a49;
+}
+.embed-slot h3 { margin-bottom: 10px; }
+.embed-slot p { max-width: 56ch; margin: 0 auto 6px; font-size: 0.95rem; }
+.embed-slot code {
+  background: #fff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Reviews
+   -------------------------------------------------------------------------- */
+
+.stars { color: var(--star); letter-spacing: 3px; font-size: 1.05rem; }
+
+.review-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.review-card blockquote {
+  font-size: 1.02rem;
+  color: var(--ink);
+  font-style: italic;
+  line-height: 1.6;
+}
+.review-card cite {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.review-sources {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.review-sources .src { text-align: center; }
+.review-sources .src b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--pine-deep);
+}
+.review-sources .src span { font-size: 0.8rem; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* --------------------------------------------------------------------------
+   Split sections / feature rows
+   -------------------------------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.split .ph { border-radius: var(--radius); }
+
+.steps { counter-reset: step; display: grid; gap: 22px; margin-top: 28px; }
+.step {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  flex: 0 0 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--pine);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: grid;
+  place-items: center;
+}
+.step h3 { margin-bottom: 4px; }
+.step p { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* --------------------------------------------------------------------------
+   Forms
+   -------------------------------------------------------------------------- */
+
+.form-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 38px;
+}
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-grid .full { grid-column: 1 / -1; }
+
+label { font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 6px; color: var(--pine-deep); }
+
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1.5px solid var(--sage-line);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  color: var(--ink);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+
+.form-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 12px; }
+
+.form-success {
+  display: none;
+  background: var(--sage);
+  border: 1.5px solid var(--pine-soft);
+  color: var(--pine-deep);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   CTA band
+   -------------------------------------------------------------------------- */
+
+.cta-band {
+  background: linear-gradient(120deg, var(--pine) 0%, var(--pine-deep) 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 60px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta-band h2 { color: #fff; max-width: 22ch; }
+.cta-band p { color: rgba(255,255,255,0.8); margin-top: 8px; max-width: 48ch; }
+
+/* --------------------------------------------------------------------------
+   Tables (market stats)
+   -------------------------------------------------------------------------- */
+
+.table-scroll { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+table.market { width: 100%; border-collapse: collapse; background: var(--paper); min-width: 560px; }
+table.market th, table.market td { padding: 14px 18px; text-align: left; font-size: 0.94rem; }
+table.market th {
+  background: var(--pine-deep);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+table.market tr:nth-child(even) td { background: var(--sage); }
+table.market td b { color: var(--pine-deep); }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  background: var(--pine-deep);
+  color: rgba(255,255,255,0.82);
+  padding: 70px 0 0;
+  margin-top: 40px;
+  font-size: 0.93rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding-bottom: 48px;
+}
+.site-footer h4 {
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.site-footer a { color: rgba(255,255,255,0.82); text-decoration: none; }
+.site-footer a:hover { color: var(--gold); }
+.site-footer ul { list-style: none; display: grid; gap: 9px; }
+.footer-brand .brand-mark { margin-bottom: 14px; }
+.footer-brand p { margin-top: 10px; color: rgba(255,255,255,0.65); max-width: 34ch; }
+
+.footer-news { display: flex; gap: 8px; margin-top: 14px; }
+.footer-news input {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  border-radius: 999px;
+  padding: 11px 18px;
+}
+.footer-news input::placeholder { color: rgba(255,255,255,0.5); }
+.footer-news .btn { padding: 11px 20px; }
+
+.footer-legal {
+  border-top: 1px solid rgba(255,255,255,0.14);
+  padding: 22px 0;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   Utility
+   -------------------------------------------------------------------------- */
+
+.bg-paper { background: var(--paper); }
+.bg-sage { background: var(--sage); }
+.bg-pine { background: var(--pine-deep); color: #fff; }
+.bg-pine h2 { color: #fff; }
+.bg-pine .lede { color: rgba(255,255,255,0.8); }
+
+.center { text-align: center; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 32px; }
+.mt-4 { margin-top: 48px; }
+
+.eyebrow-rule {
+  width: 56px; height: 3px;
+  background: var(--gold);
+  border: none;
+  margin: 0 0 22px;
+}
+.center .eyebrow-rule, .section-head.center .eyebrow-rule { margin-left: auto; margin-right: auto; }
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .split { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+}
+
+@media (max-width: 720px) {
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 76px; left: 0; right: 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--sage-line);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px 26px;
+    gap: 16px;
+    box-shadow: var(--shadow-lg);
+  }
+  .site-nav.open { display: flex; }
+  .nav-toggle { display: block; }
+  .grid-2, .grid-3, .grid-4, .form-grid { grid-template-columns: 1fr; }
+  .hero { padding: 72px 0 120px; }
+  .quick-search { flex-direction: column; }
+  .quick-search .btn { width: 100%; text-align: center; }
+  .cta-band { padding: 40px 28px; }
+  section { padding: 60px 0; }
+}
+
+
+/* --- preview shell: hides all but the routed page --- */
+.pv-page { display: none; }
+.pv-page.pv-on { display: block; }
+.pv-badge {
+  position: fixed; right: 16px; bottom: 16px; z-index: 999;
+  background: var(--pine-deep); color: var(--cream);
+  font-family: var(--font-body); font-size: 0.74rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 9px 15px; border-radius: 999px;
+  box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.18);
+  display: flex; align-items: center; gap: 9px;
+}
+.pv-badge b { color: var(--gold); font-weight: 700; }
+.pv-badge button {
+  background: none; border: none; color: rgba(255,255,255,0.55);
+  cursor: pointer; font-size: 1rem; line-height: 1; padding: 0;
+}
+.pv-badge button:hover, .pv-badge button:focus-visible { color: var(--gold); }
+@media (max-width: 720px) { .pv-badge { right: 10px; bottom: 10px; font-size: 0.68rem; } }
+</style>
+
+<div class="pv-page" id="home" data-src="index.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-badges">
+      <span>★ 5.0 on Zillow</span>
+      <span>38 Years in Tracy</span>
+      <span>Independent Broker</span>
+    </div>
+    <h1>Tracy's most trusted name in real estate since 1988.</h1>
+    <p class="lede">Nearly 4,000 homes sold across Tracy, Mountain House, Lathrop and Manteca — by an independent broker who still answers his own phone.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#valuation">Get Your Home's Value</a>
+      <a class="btn btn-ghost-light" href="#search">Browse Homes</a>
+    </div>
+    <form class="quick-search" data-demo>
+      <input type="text" placeholder="Search by city, neighborhood, or address…" aria-label="Search homes">
+      <button class="btn btn-pine" type="submit">Search</button>
+      <div class="form-success">Demo mode — search will connect to the MLS/IDX feed at launch.</div>
+    </form>
+  </div>
+  <!-- Altamont hills, drawn in code — swap for a real drone photo when available -->
+  <svg class="hero-hills" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,120 C240,60 420,140 720,100 C1020,60 1200,130 1440,90 L1440,200 L0,200 Z" fill="#2d5343" opacity="0.55"/>
+    <path d="M0,150 C280,100 520,170 800,135 C1080,100 1260,160 1440,130 L1440,200 L0,200 Z" fill="#c19a5b" opacity="0.28"/>
+    <path d="M0,175 C320,135 600,195 900,165 C1160,140 1320,185 1440,165 L1440,200 L0,200 Z" fill="#faf7f1"/>
+  </svg>
+</div>
+
+<!-- ============================== STAT STRIP ============================== -->
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>38</b><span>Years Serving Tracy</span></div>
+    <div><b>3,900+</b><span>Homes Sold</span></div>
+    <div><b>5.0★</b><span>Zillow Rating</span></div>
+    <div><b>25</b><span>Straight Master's Awards</span></div>
+  </div>
+</div>
+
+<!-- ============================== FEATURED LISTINGS ============================== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Featured Listings</span>
+      <h2>Homes on the market now</h2>
+      <p class="lede">Every Klemm listing gets professional photography, staging guidance, and a show-ready consultation before it hits the market.</p>
+    </div>
+    <div class="grid-3">
+      <a class="card" href="#listings">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO — replace with current listing (assets/listing-1.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">For Sale · Tracy</span>
+          <span class="price">$895,000</span>
+          <div class="listing-facts"><span>5 bd</span><span>3 ba</span><span>2,944 sqft</span></div>
+          <p class="mt-2">[PLACEHOLDER — pull live listing details from MLS at launch]</p>
+        </div>
+      </a>
+      <a class="card" href="#listings">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO — replace with current listing (assets/listing-2.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">For Sale · Tracy</span>
+          <span class="price">$870,000</span>
+          <div class="listing-facts"><span>4 bd</span><span>3 ba</span><span>3,128 sqft</span></div>
+          <p class="mt-2">[PLACEHOLDER — pull live listing details from MLS at launch]</p>
+        </div>
+      </a>
+      <a class="card" href="#listings">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO — replace with current listing (assets/listing-3.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">Coming Soon · Mountain House</span>
+          <span class="price">Price on request</span>
+          <div class="listing-facts"><span>— bd</span><span>— ba</span><span>— sqft</span></div>
+          <p class="mt-2">[PLACEHOLDER — pull live listing details from MLS at launch]</p>
+        </div>
+      </a>
+    </div>
+    <p class="center mt-4"><a class="btn btn-ghost" href="#listings">View All Listings</a></p>
+  </div>
+</section>
+
+<!-- ============================== SELL PANEL ============================== -->
+<section class="bg-paper">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Selling Your Home</span>
+      <h2>A 38-year process, not a guess</h2>
+      <p class="lede mt-2">Jack's listings don't just go on the market — they go on show. Here's how a Klemm listing sells:</p>
+      <div class="steps">
+        <div class="step">
+          <div><h3>Show-Ready Consultation</h3><p>A free walk-through with specific repair, staging and improvement recommendations — only the ones that pay you back at closing.</p></div>
+        </div>
+        <div class="step">
+          <div><h3>Priced From Real Data</h3><p>A comparative market analysis built on nearly four decades of Tracy-area closings, not an algorithm's guess.</p></div>
+        </div>
+        <div class="step">
+          <div><h3>Marketed Like It Matters</h3><p>Professional photography, video tour, and exposure to a buyer database built over 38 years — then negotiated by a broker who's closed thousands of deals.</p></div>
+        </div>
+      </div>
+      <div class="hero-cta mt-3">
+        <a class="btn btn-pine" href="#sell">How Jack Sells Your Home</a>
+        <a class="btn btn-gold" href="#valuation">Free Home Valuation</a>
+      </div>
+    </div>
+    <div class="ph ph-3x4" data-label="PHOTO — Jack at a listing / with clients at closing (assets/jack-selling.jpg)"></div>
+  </div>
+</section>
+
+<!-- ============================== COMMUNITIES ============================== -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <hr class="eyebrow-rule">
+      <span class="kicker">Where We Work</span>
+      <h2>One broker. Five communities. Since 1988.</h2>
+    </div>
+    <div class="grid-3">
+      <a class="card" href="#communities-tracy">
+        <div class="ph ph-16x9" data-label="PHOTO — Downtown Tracy / 11th Street (assets/community-tracy.jpg)"></div>
+        <div class="card-body"><h3>Tracy</h3><p>Home base. The Central Valley's front door to the Bay Area — median ~$673K.</p></div>
+      </a>
+      <a class="card" href="#communities-mountain-house">
+        <div class="ph ph-16x9" data-label="PHOTO — Mountain House neighborhood (assets/community-mh.jpg)"></div>
+        <div class="card-body"><h3>Mountain House</h3><p>California's fastest-growing new city. Jack has sold here since the first villages.</p></div>
+      </a>
+      <a class="card" href="#communities-tracy-hills">
+        <div class="ph ph-16x9" data-label="PHOTO — Tracy Hills new construction (assets/community-th.jpg)"></div>
+        <div class="card-body"><h3>Tracy Hills</h3><p>New construction, master-planned living on the city's southern edge.</p></div>
+      </a>
+      <a class="card" href="#communities-river-islands">
+        <div class="ph ph-16x9" data-label="PHOTO — River Islands lakes/bridges (assets/community-ri.jpg)"></div>
+        <div class="card-body"><h3>River Islands &amp; Lathrop</h3><p>A waterfront master plan with its own schools — and its own market rhythm.</p></div>
+      </a>
+      <a class="card" href="#communities-manteca">
+        <div class="ph ph-16x9" data-label="PHOTO — Manteca (assets/community-manteca.jpg)"></div>
+        <div class="card-body"><h3>Manteca</h3><p>Family-first value along the 120 corridor, minutes from everything.</p></div>
+      </a>
+      <a class="card" href="#bay-area">
+        <div class="ph ph-16x9" data-label="PHOTO — Altamont Pass / ACE train (assets/commute.jpg)"></div>
+        <div class="card-body"><h3>Moving from the Bay Area?</h3><p>The honest guide: commutes, schools, and what your equity buys over the hill.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== REVIEWS ============================== -->
+<section class="bg-sage">
+  <div class="wrap">
+    <div class="section-head center">
+      <hr class="eyebrow-rule">
+      <span class="kicker">What Clients Say</span>
+      <h2>100+ five-star reviews. Zero shortcuts.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Always available whether by phone, email or text — and answers questions promptly. Very communicative during the whole process."</blockquote>
+        <cite>Zillow review · Tracy seller</cite>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Renowned among colleagues and clients alike for his honesty, integrity and professionalism."</blockquote>
+        <cite>Zillow review · Tracy client</cite>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Klemm Real Estate is by far the most professional and resourceful brokerage in Mountain House and Tracy."</blockquote>
+        <cite>Yelp review · Mountain House client</cite>
+      </div>
+    </div>
+    <div class="review-sources">
+      <div class="src"><b>5.0★</b><span>Zillow</span></div>
+      <div class="src"><b>4.5★</b><span>Yelp</span></div>
+      <div class="src"><b>4.8★</b><span>Google</span></div>
+      <div class="src"><b>25 yrs</b><span>CVAR Master's Award</span></div>
+    </div>
+    <p class="center mt-3"><a class="btn btn-ghost" href="#reviews">Read More Reviews</a></p>
+  </div>
+</section>
+
+<!-- ============================== MEET JACK ============================== -->
+<section>
+  <div class="wrap split">
+    <div class="ph ph-3x4" data-label="PHOTO — Jack Klemm professional headshot (assets/jack-klemm.jpg)"></div>
+    <div>
+      <span class="kicker">Meet Jack</span>
+      <h2>The broker who never left</h2>
+      <p class="lede mt-2">Jack Klemm started selling Tracy real estate in 1988 — before Mountain House existed, before the ACE train ran, before most of today's agents had licenses. In 2008 he opened his own independent brokerage on 11th Street, and he's been the Central Valley Association of Realtors' Master's Award winner every year for 25 straight years.</p>
+      <p class="lede mt-2">No franchise. No hand-offs. Just Jack and a small team — Lisa, Mary, Alex, and Erica — who treat every deal like it's happening in their own neighborhood. Because it is.</p>
+      <div class="hero-cta mt-3">
+        <a class="btn btn-pine" href="#about">Jack's Story &amp; Team</a>
+        <a class="btn btn-ghost" href="#notable-sales">See Notable Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA BAND ============================== -->
+<section class="tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Thinking about a move?</h2>
+        <p>Start with a real number — a free, no-pressure market valuation of your home from the broker who's sold nearly 4,000 of them.</p>
+      </div>
+      <a class="btn btn-gold" href="#valuation">Get My Free Valuation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="about" data-src="about.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about" class="active">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">About</span>
+    <h1>Thirty-eight years. One town. One standard.</h1>
+    <p class="lede">The story of Tracy's independent broker — and the small team that outworks the big franchises.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div class="ph ph-3x4" data-label="PHOTO — Jack Klemm portrait, downtown Tracy office (assets/jack-klemm.jpg)"></div>
+    <div>
+      <span class="kicker">Jack Klemm · Broker/Owner</span>
+      <h2>Since 1988, the constant in a changing market</h2>
+      <p class="lede mt-2">Jack Klemm got his real estate license in 1988, when Tracy was a farm town of 35,000 and the Altamont commute was a curiosity. He's since guided the market through every boom, bust, and building spree — nearly 4,000 closed transactions worth of them.</p>
+      <p class="lede mt-2">In November 2008 — the depth of the housing crash, when franchises were fleeing — Jack bet on Tracy and opened his own independent brokerage on 11th Street. Klemm Real Estate has been downtown ever since.</p>
+      <p class="lede mt-2">He holds the GRI and CRS designations — earned by fewer than 4% of REALTORS® nationwide — and has received the Central Valley Association of REALTORS® Master's Award every single year for 25 years.</p>
+      <ul class="mt-3" style="display:grid;gap:10px;list-style:none;">
+        <li>🏅 <b>CVAR Master's Award</b> — 25 consecutive years</li>
+        <li>🎓 <b>GRI</b> — Graduate, REALTOR® Institute</li>
+        <li>🎓 <b>CRS</b> — Certified Residential Specialist</li>
+        <li>📜 <b>CA DRE #01004092</b> (Broker) · Brokerage DRE #01866206</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap">
+    <div class="section-head center">
+      <hr class="eyebrow-rule">
+      <span class="kicker">The Team</span>
+      <h2>Small on purpose</h2>
+      <p class="lede">Big teams hand you off. At Klemm Real Estate, the person who lists your home is the person who answers your call.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="ph ph-square" data-label="PHOTO — Lisa Boone headshot (assets/team-lisa.jpg)"></div>
+        <div class="card-body"><h3>Lisa Boone</h3><p>REALTOR® — in the business since 1998. [PLACEHOLDER: bio + DRE#]</p></div>
+      </div>
+      <div class="card">
+        <div class="ph ph-square" data-label="PHOTO — Mary Napoli headshot (assets/team-mary.jpg)"></div>
+        <div class="card-body"><h3>Mary Napoli</h3><p>REALTOR® — [PLACEHOLDER: bio + DRE#]</p></div>
+      </div>
+      <div class="card">
+        <div class="ph ph-square" data-label="PHOTO — Alex Machuca headshot (assets/team-alex.jpg)"></div>
+        <div class="card-body"><h3>Alex Machuca</h3><p>REALTOR® — [PLACEHOLDER: bio + DRE#]</p></div>
+      </div>
+      <div class="card">
+        <div class="ph ph-square" data-label="PHOTO — Erica Hall headshot (assets/team-erica.jpg)"></div>
+        <div class="card-body"><h3>Erica Hall</h3><p>REALTOR® — DRE #01428918. [PLACEHOLDER: bio]</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="kicker">How We Work</span>
+      <h2>The promises behind the plaque wall</h2>
+      <div class="steps mt-3">
+        <div class="step"><div><h3>We listen first</h3><p>Every plan starts with your goals — not a script, not a quota.</p></div></div>
+        <div class="step"><div><h3>We tell you the truth</h3><p>About price, about prep, about timing. Even when it's not what you hoped to hear.</p></div></div>
+        <div class="step"><div><h3>We stay reachable</h3><p>Phone, text, email — the #1 theme in our reviews is that we actually answer.</p></div></div>
+        <div class="step"><div><h3>We're here after closing</h3><p>A 12-year-running monthly newsletter, market check-ins, and a broker you'll still see downtown.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="ph ph-4x3" data-label="PHOTO — team group shot outside the 11th St office (assets/team-group.jpg)"></div>
+      <div class="ph ph-16x9 mt-2" data-label="PHOTO — downtown Tracy / office exterior (assets/office.jpg)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Come say hello.</h2>
+        <p>672 W 11th Street, Suite 216 — downtown Tracy, where we've always been.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="bay-area" data-src="bay-area.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search" class="active">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">The Commuter's Guide</span>
+    <h1>Moving from the Bay Area? Read this first.</h1>
+    <p class="lede">Every week, families trade Pleasanton rents and Dublin bidding wars for a real backyard in Tracy. Here's the honest version of what that move looks like — commute and all — from a broker who's guided it since 1988.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The Math</span>
+      <h2>What your equity buys over the hill</h2>
+      <p class="lede">Same job. Same paycheck. Very different house. <em>(Figures are recent medians — updated monthly in Jack's newsletter.)</em></p>
+    </div>
+    <div class="table-scroll">
+      <table class="market">
+        <thead><tr><th>City</th><th>Median Home Price</th><th>What ~$700K Gets You</th></tr></thead>
+        <tbody>
+          <tr><td><b>Pleasanton</b></td><td>~$1.7M</td><td>A condo, maybe</td></tr>
+          <tr><td><b>Dublin</b></td><td>~$1.2M</td><td>A townhome</td></tr>
+          <tr><td><b>Livermore</b></td><td>~$1.1M</td><td>A small starter home</td></tr>
+          <tr><td><b>Tracy</b></td><td>~$673K</td><td><b>A 4-bed single-family home with a yard</b></td></tr>
+          <tr><td><b>Mountain House</b></td><td>~$963K</td><td>A large newer home in a master-planned city</td></tr>
+          <tr><td><b>Manteca / Lathrop</b></td><td>~$600Ks</td><td>New construction with room to spare</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap split">
+    <div class="ph ph-4x3" data-label="PHOTO — ACE train at Tracy station / Altamont Pass (assets/commute.jpg)"></div>
+    <div>
+      <span class="kicker">The Commute, Honestly</span>
+      <h2>Yes, there's a commute. Here's how people actually do it.</h2>
+      <div class="steps">
+        <div class="step"><div><h3>The ACE Train</h3><p>Board in downtown Tracy or Lathrop, work or sleep your way to Pleasanton, Fremont, or San Jose. No white knuckles on the 580.</p></div></div>
+        <div class="step"><div><h3>I-205 → I-580</h3><p>The classic drive over the Altamont. Leave early, podcast up. Many commuters do 2–3 office days and remote the rest.</p></div></div>
+        <div class="step"><div><h3>Hybrid Reality</h3><p>Post-2020, most of Jack's Bay Area buyers commute 2–3 days a week — which changes the whole equation on what "too far" means.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <hr class="eyebrow-rule">
+      <span class="kicker">Where Commuters Land</span>
+      <h2>Pick your version of the move</h2>
+    </div>
+    <div class="grid-3">
+      <a class="card" href="#communities-mountain-house">
+        <div class="card-body"><span class="card-meta">Closest to the Bay</span><h3>Mountain House</h3><p>First exit after the Altamont. Newest city in California, top-rated schools, shortest drive.</p></div>
+      </a>
+      <a class="card" href="#communities-tracy">
+        <div class="card-body"><span class="card-meta">The Balanced Pick</span><h3>Tracy</h3><p>Real downtown, established neighborhoods, ACE station, the most house for the money.</p></div>
+      </a>
+      <a class="card" href="#communities-river-islands">
+        <div class="card-body"><span class="card-meta">The New Build</span><h3>River Islands</h3><p>Lakes, trails, charter schools, and new construction — with its own ACE-adjacent access.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-sage">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Selling there, buying here?</h2>
+        <p>Jack coordinates both sides — including 1031 exchanges and contingent offers — so you're never carrying two mortgages or zero houses.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Talk Through the Move</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="communities" data-src="communities/index.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities" class="active">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Communities</span>
+    <h1>Know the neighborhoods like a local. Because we are one.</h1>
+    <p class="lede">Jack has sold homes in every one of these communities since before most of them had stoplights. Pick yours.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="grid-3">
+      <a class="card" href="#communities-tracy">
+        <div class="ph ph-16x9" data-label="PHOTO — Downtown Tracy (assets/community-tracy.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Median ~$673K</span><h3>Tracy</h3><p>The home base — real downtown, ACE station, established neighborhoods and new ones.</p></div>
+      </a>
+      <a class="card" href="#communities-tracy-hills">
+        <div class="ph ph-16x9" data-label="PHOTO — Tracy Hills (assets/community-th.jpg)"></div>
+        <div class="card-body"><span class="card-meta">New Construction</span><h3>Tracy Hills</h3><p>The master-planned southern edge — new builds, parks, and I-580 access.</p></div>
+      </a>
+      <a class="card" href="#communities-mountain-house">
+        <div class="ph ph-16x9" data-label="PHOTO — Mountain House (assets/community-mh.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Median ~$963K</span><h3>Mountain House</h3><p>California's newest city and one of its fastest-growing — top schools, village life.</p></div>
+      </a>
+      <a class="card" href="#communities-river-islands">
+        <div class="ph ph-16x9" data-label="PHOTO — River Islands (assets/community-ri.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Master-Planned</span><h3>River Islands &amp; Lathrop</h3><p>Lakes, trails and charter schools on the San Joaquin — a market of its own.</p></div>
+      </a>
+      <a class="card" href="#communities-manteca">
+        <div class="ph ph-16x9" data-label="PHOTO — Manteca (assets/community-manteca.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Best Value</span><h3>Manteca</h3><p>Family-first value on the 120 corridor — parks, new retail, and room to grow.</p></div>
+      </a>
+      <a class="card" href="#bay-area">
+        <div class="ph ph-16x9" data-label="PHOTO — Altamont / ACE train (assets/commute.jpg)"></div>
+        <div class="card-body"><span class="card-meta">The Guide</span><h3>Moving from the Bay Area?</h3><p>Commutes, schools, and what your equity buys over the hill — the honest version.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-sage tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Not sure which fits?</h2>
+        <p>Tell Jack your commute, your budget, and your must-haves — he'll tell you where you'll actually be happy.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Ask Jack</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="communities-manteca" data-src="communities/manteca.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities" class="active">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Community Guide</span>
+    <h1>Manteca, California</h1>
+    <p class="lede">Family-first value where the 120 meets the 99 — established neighborhoods, steady new construction, and some of the region's most attainable family homes.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>~$600Ks</b><span>Typical Family Home</span></div>
+    <div><b>120/99</b><span>Corridor Crossroads</span></div>
+    <div><b>Growing</b><span>Retail &amp; Amenities</span></div>
+    <div><b>Value</b><span>Most Sqft per Dollar</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="kicker">The Local Read</span>
+      <h2>The value play with staying power</h2>
+      <p class="lede mt-2">Manteca is where budgets breathe. Buyers priced out of Tracy or Mountain House find newer square footage here for meaningfully less — with Costco, Bass Pro, and the 120 corridor's retail growth filling in around them. It's also a strong move-up and investment market, which is why Jack's Manteca work spans first homes to 1031 exchanges.</p>
+      <p class="mt-3"><em>[PLACEHOLDER — add neighborhood blurbs: Union Ranch, Del Webb Woodbridge (55+), downtown Manteca, new 120-corridor communities…]</em></p>
+    </div>
+    <div>
+      <div class="ph ph-4x3" data-label="PHOTO — Manteca neighborhood (assets/community-manteca.jpg)"></div>
+      <div class="ph ph-16x9 mt-2" data-label="PHOTO — Manteca landmark / orchard line (assets/manteca-2.jpg)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap">
+    <div class="embed-slot">
+      <h3>🔌 Live Manteca Listings</h3>
+      <p>IDX embed filtered to Manteca, CA goes here. (mantecare.com should 301-redirect to this page after consolidation.)</p>
+    </div>
+    <div class="cta-band mt-4">
+      <div>
+        <h2>Get more house in Manteca.</h2>
+        <p>Tell Jack your budget — he'll show you what it buys on each side of the county line.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Talk to Jack</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="communities-mountain-house" data-src="communities/mountain-house.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities" class="active">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Community Guide</span>
+    <h1>Mountain House, California</h1>
+    <p class="lede">California's newest city — and one of its fastest-growing. First exit after the Altamont, top-rated schools, and a village plan that actually works. Jack has sold here since the first homes went up.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>~$963K</b><span>Median Sale Price</span></div>
+    <div><b>+5.6%</b><span>Population Growth (1 yr)</span></div>
+    <div><b>~30,700</b><span>Residents &amp; Climbing</span></div>
+    <div><b>2024</b><span>Incorporated as a City</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="kicker">The Local Read</span>
+      <h2>The shortest commute in the Valley — priced accordingly</h2>
+      <p class="lede mt-2">Mountain House sits right at the base of the Altamont: it's the closest San Joaquin address to the Bay Area, and the market knows it. You pay a premium over Tracy — roughly $290K at the median — for newer housing stock, K-8 village schools, and that first-exit commute.</p>
+      <p class="lede mt-2">The nuance right now: resale homes are seeing price cuts while brand-new construction keeps pulling buyers. If you're selling a resale here, pricing against the builders is the whole strategy. If you're buying, that tension is your leverage — and Jack has negotiated both sides of it.</p>
+      <p class="mt-3"><em>[PLACEHOLDER — add village-by-village blurbs: Altamont, Bethany, Cordes, Hansen, Questa, Wicklund…]</em></p>
+    </div>
+    <div>
+      <div class="ph ph-4x3" data-label="PHOTO — Mountain House village street (assets/community-mh.jpg)"></div>
+      <div class="ph ph-16x9 mt-2" data-label="PHOTO — Mountain House aerial / new construction (assets/mh-aerial.jpg)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap">
+    <div class="embed-slot">
+      <h3>🔌 Live Mountain House Listings</h3>
+      <p>IDX embed filtered to Mountain House, CA goes here. (Note: mountainhousere.com should 301-redirect to this page after consolidation.)</p>
+    </div>
+    <div class="cta-band mt-4">
+      <div>
+        <h2>The Mountain House move, handled.</h2>
+        <p>"By far the most professional and resourceful brokerage in Mountain House and Tracy" — an actual client review.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Talk to Jack</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="communities-river-islands" data-src="communities/river-islands.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities" class="active">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Community Guide</span>
+    <h1>River Islands &amp; Lathrop</h1>
+    <p class="lede">A waterfront master plan on the San Joaquin with its own lakes, trails and charter schools — plus the established Lathrop neighborhoods around it. One of the region's most distinctive markets.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>Lakes</b><span>Built-In Waterfront</span></div>
+    <div><b>Charter</b><span>STEAM Schools In-Plan</span></div>
+    <div><b>ACE</b><span>Lathrop Station Access</span></div>
+    <div><b>New</b><span>Construction Ongoing</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="kicker">The Local Read</span>
+      <h2>The master plan that families ask for by name</h2>
+      <p class="lede mt-2">River Islands isn't just another subdivision — it's a purpose-built lake town, and buyers increasingly arrive asking for it by name. Its charter schools and waterfront lots create pricing dynamics that don't track the rest of Lathrop, which is exactly why comps need local hands.</p>
+      <p class="lede mt-2">Jack has handled River Islands and Lathrop sales through every phase of the build-out, including relocation and investment purchases keyed to the ACE station.</p>
+      <p class="mt-3"><em>[PLACEHOLDER — add current phase/builder info, lake-lot premium notes, school enrollment details]</em></p>
+    </div>
+    <div>
+      <div class="ph ph-4x3" data-label="PHOTO — River Islands lakes/bridge (assets/community-ri.jpg)"></div>
+      <div class="ph ph-16x9 mt-2" data-label="PHOTO — Lathrop / River Islands aerial (assets/ri-aerial.jpg)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap">
+    <div class="embed-slot">
+      <h3>🔌 Live River Islands &amp; Lathrop Listings</h3>
+      <p>IDX embed filtered to Lathrop / River Islands goes here. (lathropre.com should 301-redirect to this page after consolidation.)</p>
+    </div>
+    <div class="cta-band mt-4">
+      <div>
+        <h2>Lake life, an hour from the Bay.</h2>
+        <p>Let Jack walk you through which phases, lots and schools fit your family — before you talk to a builder.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Talk to Jack</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="communities-tracy-hills" data-src="communities/tracy-hills.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities" class="active">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Community Guide</span>
+    <h1>Tracy Hills</h1>
+    <p class="lede">The master-planned southern edge of Tracy — new construction, hillside parks, and direct I-580 access. A different market with different rules, and Jack knows both sets.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>New</b><span>Construction-Led Market</span></div>
+    <div><b>~112</b><span>Days on Market (slower)</span></div>
+    <div><b>I-580</b><span>Direct Corridor Access</span></div>
+    <div><b>K-8</b><span>New Schools In-Plan</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="kicker">The Local Read</span>
+      <h2>Where patience is a negotiating strategy</h2>
+      <p class="lede mt-2">Tracy Hills is the newest large-scale growth in Tracy — and because builder inventory competes with early resales, homes here sit longer than the citywide average. For buyers, that's leverage: incentives, rate buydowns, and price flexibility that don't exist downtown. For sellers, it means positioning against the builder's model home down the street.</p>
+      <p class="lede mt-2">Jack's advice differs by street and by phase. That's the point of 38 years — he's watched every Tracy master plan mature, and he knows which phases hold value first.</p>
+      <p class="mt-3"><em>[PLACEHOLDER — add builder lineup, current phases, HOA/Mello-Roos notes]</em></p>
+    </div>
+    <div>
+      <div class="ph ph-4x3" data-label="PHOTO — Tracy Hills homes / hillside (assets/community-th.jpg)"></div>
+      <div class="ph ph-16x9 mt-2" data-label="PHOTO — Tracy Hills entrance / park (assets/th-park.jpg)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap">
+    <div class="embed-slot">
+      <h3>🔌 Live Tracy Hills Listings</h3>
+      <p>IDX embed filtered to the Tracy Hills area goes here.</p>
+    </div>
+    <div class="cta-band mt-4">
+      <div>
+        <h2>New build or resale?</h2>
+        <p>Bring Jack to the builder's office — his commission costs you nothing and his negotiation history saves you plenty.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Talk to Jack</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="communities-tracy" data-src="communities/tracy.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities" class="active">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Community Guide</span>
+    <h1>Tracy, California</h1>
+    <p class="lede">The Central Valley's front door to the Bay Area — a real downtown, an ACE train station, and the most house your money buys within an hour of the Tri-Valley.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>~$673K</b><span>Median Sale Price</span></div>
+    <div><b>~31</b><span>Days to Pending</span></div>
+    <div><b>~100K</b><span>Population</span></div>
+    <div><b>1988</b><span>Jack Selling Here Since</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="kicker">The Local Read</span>
+      <h2>What Jack tells people about Tracy</h2>
+      <p class="lede mt-2">Tracy isn't a suburb pretending to be a town — it was a town first. There's a working downtown on 10th and 11th Streets (Jack's office included), established neighborhoods with mature trees, and new master-planned growth on the edges. Downtown-area homes move in under three weeks; brand-new construction in Tracy Hills takes longer and negotiates softer.</p>
+      <p class="lede mt-2">Buyers here split roughly into two camps: Bay Area commuters trading equity for square footage, and Valley families moving up. Knowing which camp you're negotiating against is half the game — and after nearly 4,000 local sales, Jack usually knows the other agent, too.</p>
+      <p class="mt-3"><em>[PLACEHOLDER — add neighborhood-by-neighborhood blurbs: Redbridge, Edgewood, Central Tracy, Souza Estates, Hidden Lakes…]</em></p>
+    </div>
+    <div>
+      <div class="ph ph-4x3" data-label="PHOTO — Downtown Tracy street scene (assets/community-tracy.jpg)"></div>
+      <div class="ph ph-16x9 mt-2" data-label="PHOTO — Tracy neighborhood aerial (assets/tracy-aerial.jpg)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap">
+    <div class="embed-slot">
+      <h3>🔌 Live Tracy Listings</h3>
+      <p>IDX embed filtered to Tracy, CA goes here — map view with price/bed/bath filters.</p>
+    </div>
+    <div class="cta-band mt-4">
+      <div>
+        <h2>Buying or selling in Tracy?</h2>
+        <p>Start with the broker whose name has been on Tracy sold signs for 38 years.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Talk to Jack</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="contact" data-src="contact.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="active">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Contact</span>
+    <h1>Talk to a broker, not a call center</h1>
+    <p class="lede">Phone, text, email, or walk in the door downtown — the #1 thing clients say about Jack is that he actually answers.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <form class="form-card" data-demo>
+        <h3 style="margin-bottom:18px;">Send a message</h3>
+        <div class="form-grid">
+          <div><label for="c-name">Name</label><input type="text" id="c-name" placeholder="Your name"></div>
+          <div><label for="c-phone">Phone</label><input type="tel" id="c-phone" placeholder="(209) 555-0123"></div>
+          <div class="full"><label for="c-email">Email</label><input type="email" id="c-email" placeholder="you@email.com"></div>
+          <div class="full"><label for="c-topic">I'm interested in…</label>
+            <select id="c-topic">
+              <option>Selling my home</option>
+              <option>Buying a home</option>
+              <option>Both — selling and buying</option>
+              <option>Investment property / 1031 exchange</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="full"><label for="c-msg">Message</label><textarea id="c-msg" rows="4" placeholder="How can we help?"></textarea></div>
+        </div>
+        <button class="btn btn-pine mt-2" type="submit">Send Message</button>
+        <div class="form-success">Demo mode — wire this form to CRM/email before launch.</div>
+      </form>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-body">
+          <span class="card-meta">The Office</span>
+          <h3>Klemm Real Estate, Inc.</h3>
+          <p class="mt-2">672 W 11th Street, Suite 216<br>Tracy, CA 95376</p>
+          <p class="mt-2"><b>Phone:</b> <a href="tel:+12093211094">(209) 321-1094</a><br>
+          <b>Email:</b> <a href="mailto:jack@klemmre.com">jack@klemmre.com</a></p>
+          <p class="mt-2"><b>Licenses:</b><br>Jack Klemm, Broker — CA DRE #01004092<br>Klemm Real Estate, Inc. — CA DRE #01866206</p>
+        </div>
+      </div>
+      <div class="ph ph-16x9 mt-2" data-label="MAP EMBED — Google Maps iframe for 672 W 11th St, Tracy (add at launch)"></div>
+      <div class="card mt-2">
+        <div class="card-body">
+          <span class="card-meta">Follow Along</span>
+          <h3>Social</h3>
+          <p>[PLACEHOLDER — confirm live handles before launch]<br>
+          YouTube: Klemm Real Estate listing tours<br>
+          Facebook: [handle] · Instagram: [handle]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="insights" data-src="insights.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Market Insights</span>
+    <h1>The newsletter Tracy has read since 2013</h1>
+    <p class="lede">Every month for over a decade, Jack has written the honest version of what's happening in the Tracy-area market. No hype, no fluff — just what sold, for how much, and what it means for you.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Latest Issues</span>
+      <h2>Recent market reports</h2>
+      <p class="lede">The full 12-year newsletter archive migrates here from the old site at launch — over 140 issues of local market history.</p>
+    </div>
+    <div class="grid-3">
+      <a class="card" href="#">
+        <div class="ph ph-16x9" data-label="COVER — latest newsletter (migrate from klemmre.com archive)"></div>
+        <div class="card-body"><span class="card-meta">[Month Year]</span><h3>[Latest issue headline]</h3><p>[PLACEHOLDER — migrate most recent newsletter from klemmre.com]</p></div>
+      </a>
+      <a class="card" href="#">
+        <div class="ph ph-16x9" data-label="COVER — prior newsletter"></div>
+        <div class="card-body"><span class="card-meta">[Month Year]</span><h3>[Issue headline]</h3><p>[PLACEHOLDER — migrate newsletter]</p></div>
+      </a>
+      <a class="card" href="#">
+        <div class="ph ph-16x9" data-label="COVER — prior newsletter"></div>
+        <div class="card-body"><span class="card-meta">[Month Year]</span><h3>[Issue headline]</h3><p>[PLACEHOLDER — migrate newsletter]</p></div>
+      </a>
+    </div>
+
+    <div class="embed-slot mt-4">
+      <h3>🔌 Newsletter Archive Migration</h3>
+      <p>The old site's monthly archive (September 2013 → present) moves here with 301 redirects from the old URLs. Recommended additions at launch: a quarterly "Tracy Market Report" flagship post and a "Mountain House Market Report" — both proven local-SEO winners.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-sage tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Get next month's issue.</h2>
+        <p>One email a month. The local market, told straight. Unsubscribe anytime.</p>
+      </div>
+      <form class="footer-news" data-demo style="margin:0;">
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Subscribe</button>
+        <div class="form-success" style="color:#fff;">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="listings" data-src="listings.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search" class="active">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Featured Listings</span>
+    <h1>Klemm listings, on the market now</h1>
+    <p class="lede">Every home below was prepped, staged, photographed and priced the Klemm way. This grid connects to the live MLS feed at launch — the cards below are placeholders showing the layout.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="grid-3">
+      <a class="card" href="#">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO (assets/listing-1.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">For Sale · Tracy</span>
+          <span class="price">$895,000</span>
+          <div class="listing-facts"><span>5 bd</span><span>3 ba</span><span>2,944 sqft</span></div>
+          <p class="mt-2">2868 Joleo Ct — [PLACEHOLDER: confirm status &amp; details from MLS]</p>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO (assets/listing-2.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">For Sale · Tracy</span>
+          <span class="price">$870,000</span>
+          <div class="listing-facts"><span>4 bd</span><span>3 ba</span><span>3,128 sqft</span></div>
+          <p class="mt-2">2413 Augusta Ave — [PLACEHOLDER: confirm status &amp; details from MLS]</p>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO (assets/listing-3.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">For Sale · Tracy (Rural)</span>
+          <span class="price">Price on request</span>
+          <div class="listing-facts"><span>— bd</span><span>— ba</span><span>— acres</span></div>
+          <p class="mt-2">3707 W Kenner Rd — [PLACEHOLDER: confirm status &amp; details from MLS]</p>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO (assets/listing-4.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">[Status] · [City]</span>
+          <span class="price">$—</span>
+          <div class="listing-facts"><span>— bd</span><span>— ba</span><span>— sqft</span></div>
+          <p class="mt-2">[PLACEHOLDER listing card]</p>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO (assets/listing-5.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">[Status] · [City]</span>
+          <span class="price">$—</span>
+          <div class="listing-facts"><span>— bd</span><span>— ba</span><span>— sqft</span></div>
+          <p class="mt-2">[PLACEHOLDER listing card]</p>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="ph ph-4x3" data-label="LISTING PHOTO (assets/listing-6.jpg)"></div>
+        <div class="card-body">
+          <span class="card-meta">[Status] · [City]</span>
+          <span class="price">$—</span>
+          <div class="listing-facts"><span>— bd</span><span>— ba</span><span>— sqft</span></div>
+          <p class="mt-2">[PLACEHOLDER listing card]</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="embed-slot mt-4">
+      <h3>🔌 Live Listings Feed</h3>
+      <p>At launch, this page pulls Klemm Real Estate's active listings automatically from MetroList via the IDX vendor, replacing the placeholder cards above. Each listing gets its own detail page with full gallery, video tour, and showing-request form.</p>
+    </div>
+
+    <div class="cta-band mt-4">
+      <div>
+        <h2>Don't see the right home?</h2>
+        <p>Tell Jack what you're looking for — the best homes in this market often sell before they're broadly advertised.</p>
+      </div>
+      <a class="btn btn-gold" href="#search">Start a Saved Search</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="notable-sales" data-src="notable-sales.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales" class="active">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Notable Sales</span>
+    <h1>The receipts: 38 years of sold signs</h1>
+    <p class="lede">Anyone can promise. Jack can point. Nearly 4,000 closed transactions across every neighborhood, price point, and market cycle since 1988.</p>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>3,900+</b><span>Career Homes Sold</span></div>
+    <div><b>77</b><span>Sold Last 12 Months</span></div>
+    <div><b>$333K–$1.9M</b><span>Recent Price Range</span></div>
+    <div><b>5</b><span>Counties Served</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Recently Sold</span>
+      <h2>A sample of recent closings</h2>
+      <p class="lede">This gallery connects to the past-sales feed at launch. Cards below are placeholders showing the layout — final version pulls address, sale price, days on market, and sale-to-list ratio for each.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="ph ph-4x3" data-label="SOLD PHOTO (assets/sold-1.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Sold · Tracy</span><span class="price">$—</span><div class="listing-facts"><span>[address]</span><span>[DOM]</span><span>[% of list]</span></div></div></div>
+      <div class="card"><div class="ph ph-4x3" data-label="SOLD PHOTO (assets/sold-2.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Sold · Mountain House</span><span class="price">$—</span><div class="listing-facts"><span>[address]</span><span>[DOM]</span><span>[% of list]</span></div></div></div>
+      <div class="card"><div class="ph ph-4x3" data-label="SOLD PHOTO (assets/sold-3.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Sold · Lathrop</span><span class="price">$—</span><div class="listing-facts"><span>[address]</span><span>[DOM]</span><span>[% of list]</span></div></div></div>
+      <div class="card"><div class="ph ph-4x3" data-label="SOLD PHOTO (assets/sold-4.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Sold · Manteca</span><span class="price">$—</span><div class="listing-facts"><span>[address]</span><span>[DOM]</span><span>[% of list]</span></div></div></div>
+      <div class="card"><div class="ph ph-4x3" data-label="SOLD PHOTO (assets/sold-5.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Sold · Tracy Hills</span><span class="price">$—</span><div class="listing-facts"><span>[address]</span><span>[DOM]</span><span>[% of list]</span></div></div></div>
+      <div class="card"><div class="ph ph-4x3" data-label="SOLD PHOTO (assets/sold-6.jpg)"></div>
+        <div class="card-body"><span class="card-meta">Sold · Tracy</span><span class="price">$—</span><div class="listing-facts"><span>[address]</span><span>[DOM]</span><span>[% of list]</span></div></div></div>
+    </div>
+
+    <div class="embed-slot mt-4">
+      <h3>🔌 Past-Sales Feed</h3>
+      <p>Populate from the existing klemmre.com /past-sales/ archive plus MLS sold data. Recommended stat callouts per year: homes sold, average sale-to-list %, average days on market — the mid-market version of "$5B closed."</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-sage tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Want your address on this page?</h2>
+        <p>Start with a free valuation and a show-ready plan. The rest is the process.</p>
+      </div>
+      <a class="btn btn-gold" href="#valuation">Get My Free Valuation</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="reviews" data-src="reviews.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews" class="active">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Client Reviews</span>
+    <h1>What 38 years of clients keep saying</h1>
+    <p class="lede">Five-star ratings across every platform, and the same three words in almost every review: communication, honesty, professionalism.</p>
+  </div>
+</div>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="review-sources">
+      <div class="src"><b>5.0★</b><span>Zillow · 100+ reviews</span></div>
+      <div class="src"><b>4.5★</b><span>Yelp · 38 reviews</span></div>
+      <div class="src"><b>4.8★</b><span>Google · 90+ reviews</span></div>
+      <div class="src"><b>★★★★★</b><span>RateMyAgent · Verified</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid-3">
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Always available whether by phone, email or text and answers questions promptly. Very communicative during the whole process."</blockquote>
+        <cite>Zillow review · Tracy seller</cite>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Renowned among colleagues and clients alike for his honesty, integrity and professionalism."</blockquote>
+        <cite>Zillow review · Tracy client</cite>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Klemm Real Estate is by far the most professional and resourceful brokerage in Mountain House and Tracy."</blockquote>
+        <cite>Yelp review · Mountain House client</cite>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Polite, professional, knowledgeable, and patient."</blockquote>
+        <cite>Client review · Tracy buyer</cite>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Excellent negotiation skills... structuring sales or 1031 exchanges no matter how simple or complex."</blockquote>
+        <cite>Zillow review · Investment seller</cite>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Our home sold in one weekend."</blockquote>
+        <cite>Client review · Tracy seller</cite>
+      </div>
+    </div>
+
+    <div class="embed-slot mt-4">
+      <h3>🔌 Live Review Feed</h3>
+      <p>At launch, embed a live review aggregator here (e.g. Zillow reviews widget + Google reviews via a service like EmbedSocial or Birdeye) so this wall updates itself and shows verified counts. Placeholder quotes above are real excerpts from public reviews — verify wording against the live platforms before launch.</p>
+    </div>
+
+    <div class="cta-band mt-4">
+      <div>
+        <h2>The next review could be yours.</h2>
+        <p>Buying or selling, it starts with one conversation.</p>
+      </div>
+      <a class="btn btn-gold" href="#contact">Talk to Jack</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="search" data-src="search.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search" class="active">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Buy With Jack</span>
+    <h1>Search every home on the market</h1>
+    <p class="lede">Full MLS coverage for Tracy, Mountain House, Tracy Hills, River Islands, Lathrop and Manteca — with saved searches and instant alerts, because the good ones don't wait.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <!-- IDX INTEGRATION SLOT -->
+    <div class="embed-slot">
+      <h3>🔌 IDX Map Search Goes Here</h3>
+      <p>This slot is reserved for the live MLS/IDX search embed (MetroList feed via iHomefinder, IDX Broker, or Showcase IDX). It replaces this block with a full map + filter search: price, beds, baths, sqft, lot, new construction, open houses.</p>
+      <p>Swap this <code>&lt;div class="embed-slot"&gt;</code> for the vendor's embed snippet at launch.</p>
+    </div>
+
+    <div class="grid-3 mt-4">
+      <a class="card" href="#communities-tracy">
+        <div class="card-body"><span class="card-meta">Browse by Area</span><h3>Tracy Homes</h3><p>All active listings citywide, from downtown bungalows to Redbridge estates.</p></div>
+      </a>
+      <a class="card" href="#communities-mountain-house">
+        <div class="card-body"><span class="card-meta">Browse by Area</span><h3>Mountain House Homes</h3><p>Every village, resale and new construction side by side.</p></div>
+      </a>
+      <a class="card" href="#communities-river-islands">
+        <div class="card-body"><span class="card-meta">Browse by Area</span><h3>River Islands &amp; Lathrop</h3><p>Waterfront master-plan living with its own charter schools.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Buyer Advantage</span>
+      <h2>Get the listing before Zillow shows it to everyone else</h2>
+      <p class="lede mt-2">Set up a saved search with Jack and you'll get new listings, price cuts, and coming-soon homes the moment they hit the MLS — plus honest advice on which ones are actually worth the drive.</p>
+      <form class="form-card mt-3" data-demo>
+        <div class="form-grid">
+          <div><label for="s-name">Name</label><input type="text" id="s-name" placeholder="Your name"></div>
+          <div><label for="s-email">Email</label><input type="email" id="s-email" placeholder="you@email.com"></div>
+          <div><label for="s-area">Area</label>
+            <select id="s-area">
+              <option>Tracy</option><option>Tracy Hills</option><option>Mountain House</option>
+              <option>River Islands / Lathrop</option><option>Manteca</option><option>Anywhere nearby</option>
+            </select>
+          </div>
+          <div><label for="s-budget">Budget</label>
+            <select id="s-budget">
+              <option>Under $500K</option><option>$500K – $700K</option><option>$700K – $900K</option>
+              <option>$900K – $1.2M</option><option>$1.2M+</option>
+            </select>
+          </div>
+          <div class="full"><label for="s-notes">What are you looking for?</label><textarea id="s-notes" rows="3" placeholder="Beds, baths, must-haves, timeline…"></textarea></div>
+        </div>
+        <button class="btn btn-pine mt-2" type="submit">Start My Search</button>
+        <div class="form-success">Demo mode — wire this form to CRM/email before launch.</div>
+        <p class="form-note">No spam, no pressure. Jack personally reviews every request.</p>
+      </form>
+    </div>
+    <div>
+      <div class="ph ph-3x4" data-label="PHOTO — buyers touring a home with Jack (assets/buyers-tour.jpg)"></div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <span class="card-meta">Moving from the Bay Area?</span>
+          <h3>Read the commuter's guide first</h3>
+          <p>ACE train schedules, I-205 reality checks, school ratings, and what your Tri-Valley equity actually buys in Tracy.</p>
+          <p class="mt-2"><a class="btn btn-ghost" href="#bay-area">The Bay Area Buyer's Guide</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="sell" data-src="sell.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell" class="active">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Sell With Jack</span>
+    <h1>Your home, sold the way 3,900 others were</h1>
+    <p class="lede">There's no algorithm for getting top dollar in Tracy. There's a process — refined over 38 years, and it starts with a free, honest conversation about what your home is really worth.</p>
+    <div class="hero-cta mt-3">
+      <a class="btn btn-gold" href="#valuation">Get My Free Valuation</a>
+      <a class="btn btn-ghost-light" href="#reviews">Hear From Sellers</a>
+    </div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="wrap stat-grid">
+    <div><b>77</b><span>Homes Sold Last Year</span></div>
+    <div><b>~$717K</b><span>Average Sale Price</span></div>
+    <div><b>1 weekend</b><span>Fastest Recent Sale</span></div>
+    <div><b>25 yrs</b><span>CVAR Master's Award</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The Klemm Listing Process</span>
+      <h2>Six steps between "thinking about it" and "sold"</h2>
+    </div>
+    <div class="grid-2">
+      <div class="steps">
+        <div class="step"><div><h3>The Honest Number</h3><p>A comparative market analysis built from decades of local closings — what your home will sell for, not what gets your signature.</p></div></div>
+        <div class="step"><div><h3>Show-Ready Consultation (Free)</h3><p>A room-by-room walk-through with specific prep recommendations. Only improvements that return more than they cost — Jack will talk you <em>out</em> of the rest.</p></div></div>
+        <div class="step"><div><h3>Staging &amp; Professional Photography</h3><p>Buyers decide online in seconds. Your home gets magazine-grade photos and video before anyone sees a single listing line.</p></div></div>
+      </div>
+      <div class="steps">
+        <div class="step" style="counter-reset: step 3;"><div><h3>Full-Market Launch</h3><p>MLS, portals, Jack's 12-year newsletter audience, and a buyer database built since 1988 — plus agent-to-agent promotion that template brokerages can't match.</p></div></div>
+        <div class="step"><div><h3>Negotiation That Shows Up in Your Proceeds</h3><p>Offers, counters, appraisal gaps, repair requests, 1031 exchanges — handled by the broker himself, not a junior teammate.</p></div></div>
+        <div class="step"><div><h3>Managed to the Wire</h3><p>Inspections, disclosures, escrow, timelines. One recent seller went from first meeting to money in hand in about nine weeks.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Why It Works</span>
+      <h2>The independent advantage</h2>
+      <p class="lede mt-2">Franchise agents answer to a brand. Jack answers to you. Klemm Real Estate is one of the only independent brokerages in Tracy — which means every marketing decision, every negotiation call, and every dollar of your equity gets the owner's attention.</p>
+      <div class="review-card mt-3">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Excellent negotiation skills... structuring sales or 1031 exchanges no matter how simple or complex."</blockquote>
+        <cite>Zillow review · Tracy seller</cite>
+      </div>
+      <div class="review-card mt-2">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Our home sold in one weekend."</blockquote>
+        <cite>Client review · Tracy seller</cite>
+      </div>
+    </div>
+    <div>
+      <div class="ph ph-3x4" data-label="PHOTO — staged Klemm listing interior (assets/staged-home.jpg)"></div>
+      <div class="ph ph-16x9 mt-2" data-label="PHOTO — sold sign / happy sellers (assets/sold-clients.jpg)"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Start with the number.</h2>
+        <p>A free market valuation from Jack — no obligation, no pressure, no automated guess. Just what your home would sell for right now.</p>
+      </div>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-page" id="valuation" data-src="valuation.html">
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">K</span>
+      <span class="brand-text"><strong>KLEMM</strong><em>Real Estate · Est. 1988</em></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#search">Buy</a>
+      <a href="#sell" class="active">Sell</a>
+      <a href="#communities">Communities</a>
+      <a href="#notable-sales">Sold</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#valuation">What's My Home Worth?</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Free Home Valuation</span>
+    <h1>What's your home actually worth?</h1>
+    <p class="lede">Zillow guesses. Jack knows. Get a real market valuation prepared by the broker who's sold nearly 4,000 homes in this market — free, within one business day, no strings.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <form class="form-card" data-demo>
+        <h3 style="margin-bottom:18px;">Request your free valuation</h3>
+        <div class="form-grid">
+          <div class="full"><label for="v-address">Property Address</label><input type="text" id="v-address" placeholder="123 Main St, Tracy, CA"></div>
+          <div><label for="v-name">Name</label><input type="text" id="v-name" placeholder="Your name"></div>
+          <div><label for="v-phone">Phone</label><input type="tel" id="v-phone" placeholder="(209) 555-0123"></div>
+          <div><label for="v-email">Email</label><input type="email" id="v-email" placeholder="you@email.com"></div>
+          <div><label for="v-timeline">Timeline</label>
+            <select id="v-timeline">
+              <option>Just curious</option>
+              <option>Selling in 0–3 months</option>
+              <option>Selling in 3–12 months</option>
+              <option>Someday, planning ahead</option>
+            </select>
+          </div>
+          <div class="full"><label for="v-notes">Anything Jack should know?</label><textarea id="v-notes" rows="3" placeholder="Upgrades, additions, rental history…"></textarea></div>
+        </div>
+        <button class="btn btn-gold mt-2" type="submit">Send My Request</button>
+        <div class="form-success">Demo mode — wire this form to CRM/email before launch. (Optionally embed an instant-valuation widget here from the IDX vendor.)</div>
+        <p class="form-note">Your information is never sold or shared. Jack personally prepares every valuation.</p>
+      </form>
+    </div>
+    <div>
+      <span class="kicker">Why It's Different</span>
+      <h2>An appraisal-grade answer, not an estimate range</h2>
+      <div class="steps mt-3">
+        <div class="step"><div><h3>Real Comparables</h3><p>Hand-picked closed sales from your actual neighborhood — including off-portal details algorithms never see.</p></div></div>
+        <div class="step"><div><h3>Condition-Adjusted</h3><p>Your kitchen remodel, your deferred roof — priced in, both directions. Honesty is the brand.</p></div></div>
+        <div class="step"><div><h3>A Plan, If You Want One</h3><p>If the number works for you, Jack shows you exactly which prep steps add to it — and which to skip.</p></div></div>
+      </div>
+      <div class="review-card mt-3">
+        <span class="stars">★★★★★</span>
+        <blockquote>"Very communicative during the whole process — from first meeting to money in hand in about nine weeks."</blockquote>
+        <cite>Client review · Tracy seller</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">K</span>
+      <h4>Klemm Real Estate, Inc.</h4>
+      <p>An independent brokerage serving Tracy, Mountain House, Lathrop and Manteca since 1988.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#search">Search Homes</a></li>
+        <li><a href="#listings">Featured Listings</a></li>
+        <li><a href="#sell">Sell With Jack</a></li>
+        <li><a href="#valuation">Home Valuation</a></li>
+        <li><a href="#notable-sales">Notable Sales</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#insights">Market Insights</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#communities-tracy">Tracy</a></li>
+        <li><a href="#communities-tracy-hills">Tracy Hills</a></li>
+        <li><a href="#communities-mountain-house">Mountain House</a></li>
+        <li><a href="#communities-river-islands">River Islands &amp; Lathrop</a></li>
+        <li><a href="#communities-manteca">Manteca</a></li>
+        <li><a href="#bay-area">Moving from the Bay Area</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>672 W 11th St, Suite 216<br>Tracy, CA 95376</li>
+        <li><a href="tel:+12093211094">(209) 321-1094</a></li>
+        <li><a href="mailto:jack@klemmre.com">jack@klemmre.com</a></li>
+      </ul>
+      <h4 class="mt-3">Monthly Market Newsletter</h4>
+      <form class="footer-news" data-demo>
+        <input type="email" placeholder="Your email" aria-label="Email address">
+        <button class="btn btn-gold" type="submit">Join</button>
+        <div class="form-success">Demo mode — connect to email platform.</div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Klemm Real Estate, Inc. · CA DRE #01866206 · Jack Klemm, Broker · CA DRE #01004092</span>
+    <span>Equal Housing Opportunity 🏠</span>
+  </div>
+</footer>
+
+
+</div>
+
+<div class="pv-badge"><span>Preview · <b>17 pages</b> · <span class="pv-name">index.html</span></span><button type="button" aria-label="Hide preview badge">&times;</button></div>
+<script>
+(function () {
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.pv-page'));
+
+  function show() {
+    var id = location.hash.replace('#', '') || 'home';
+    var target = document.getElementById(id);
+    if (!target || !target.classList.contains('pv-page')) target = pages[0];
+    pages.forEach(function (p) { p.classList.toggle('pv-on', p === target); });
+    document.querySelectorAll('.site-nav').forEach(function (n) { n.classList.remove('open'); });
+    window.scrollTo(0, 0);
+    var label = document.querySelector('.pv-badge .pv-name');
+    if (label) label.textContent = target.getAttribute('data-src');
+  }
+
+  window.addEventListener('hashchange', show);
+  show();
+
+  // Per-page mobile nav toggles (each bundled page has its own header).
+  document.querySelectorAll('.nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var nav = btn.closest('.nav-row').querySelector('.site-nav');
+      if (nav) nav.classList.toggle('open');
+    });
+  });
+
+  // Demo forms — no endpoint wired yet.
+  document.querySelectorAll('form[data-demo]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ok = form.querySelector('.form-success');
+      if (ok) { ok.style.display = 'block'; ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+      form.reset();
+    });
+  });
+
+  var dismiss = document.querySelector('.pv-badge button');
+  if (dismiss) dismiss.addEventListener('click', function () {
+    document.querySelector('.pv-badge').remove();
+  });
+})();
+</script>
